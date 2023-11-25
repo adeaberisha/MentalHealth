@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health</title>
-
     <style>
          @font-face {
             font-family: 'myFirstFont';
@@ -17,13 +16,17 @@
             list-style: none;
             box-sizing: border-box;
         }
-        
+
         .navi{
-            display: flex;
-            justify-content: space-between;
-            background: lightblue;
+            background: linear-gradient(rgb(6, 86, 6),rgb(112, 245, 154));
             height: 80px;
             width: 100%;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
         }
 
         .lista{
@@ -54,7 +57,7 @@
             color: black;
             font-size: 15px;
         }
-        
+
         .maini{
            border-radius: 20px;
            align-items: center;
@@ -135,28 +138,29 @@
     </style>
 </head>
 <body>
-    <nav class="navi">
-
-        <div class="lista">
-            <ul>
-                <li><a href="#"></a>Home</li>
-                <li><a href="#"></a>Learn More</li>
-                <li><a href="#"></a>Our Therapists</li>
-                <li><a href="#"></a>Recommendations</li>
-            </ul>
+    <div class="navi">
+        <nav>
+            <div class="lista">
+                <ul>
+                    <li><a href="#"></a>Home</li>
+                    <li><a href="#"></a>Learn More</li>
+                    <li><a href="#"></a>Our Therapists</li>
+                    <li><a href="#"></a>Recommendations</li>
+                </ul>
         </div>
-
+    
         <div class="logo">
                 <img src="WebsiteLogo.png" alt="Website Logo" style="height: 25px; width: 25px;">
                 Navigating the Mind Maze
-         </div>
-
+        </div>
+    
         <div class="log">
             <img src="PersonLogo" alt="Person Logo" style="width: 25px; height: 25px; margin-bottom: -5px;">
             Log in
         </div>
+        </nav>
+    </div>
 
-    </nav>
     <br>
     <main class="maini">
         <div class="t">
@@ -179,7 +183,6 @@
                 <p class="p4"><b>Expert Guides:</b></p>
             </div>
             <br>
-
             <div class="permbajtja">
                  <div class="majtas">
                     <p>We're not just here for the symptoms; we're here for the whole you. 
@@ -205,9 +208,6 @@
                  Together, let's turn the quest for well-being into the epic saga it was meant to be! 🚀💙</p>
             </div>
             <br>
-
     </main>
-    
-    
 </body>
 </html>
