@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health</title>
     <link rel="stylesheet" href="MentalHealth.css">
-
     <style>
          @font-face {
             font-family: 'myFirstFont';
@@ -18,15 +17,21 @@
             list-style: none;
             box-sizing: border-box;
         }
-        
+
         .navi{
             display: flex;
             justify-content: space-between;
+            background: linear-gradient(rgb(6, 86, 6),rgb(112, 245, 154));
             height: 80px;
             width: 100%;
             background-image: linear-gradient(rgb(6, 86, 6),rgb(112, 245, 154));
         }
-        
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
         .lista{
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
@@ -55,7 +60,7 @@
             color: black;
             font-size: 15px;
         }
-        
+
         .maini{
            border-radius: 20px;
            align-items: center;
@@ -139,31 +144,29 @@
     
 </head>
 <body>
-    <nav class="navi">
-
-        <div class="lista">
-            <ul>
-                <li><a href="#"></a>Home</li>
-                <li><a href="#"></a>Learn More</li>
-                <li><a href="#"></a>Our Therapists</li>
-                <li><a href="#"></a>Recommendations</li>
-            </ul>
+    <div class="navi">
+        <nav>
+            <div class="lista">
+                <ul>
+                    <li><a href="#"></a>Home</li>
+                    <li><a href="#"></a>Learn More</li>
+                    <li><a href="#"></a>Our Therapists</li>
+                    <li><a href="#"></a>Recommendations</li>
+                </ul>
         </div>
-
+    
         <div class="logo">
                 <img src="WebsiteLogo.png" alt="Website Logo" style="height: 25px; width: 25px;">
-         </div>
-
-         <div class="titulli">
-            <p>Navigating the Mind Maze</p>
+                Navigating the Mind Maze
          </div>
 
         <div class="log">
             <img src="PersonLogo" alt="Person Logo" style="width: 25px; height: 25px; margin-bottom: -5px;">
             Log in
         </div>
+        </nav>
+    </div>
 
-    </nav>
     <br>
 
     <div class="slideri">
@@ -195,7 +198,6 @@
                 <p class="p4"><b>Expert Guides:</b></p>
             </div>
             <br>
-
             <div class="permbajtja">
                  <div class="majtas">
                     <p>We're not just here for the symptoms; we're here for the whole you. 
@@ -221,8 +223,6 @@
                  Together, let's turn the quest for well-being into the epic saga it was meant to be! 🚀💙</p>
             </div>
             <br>
-
     </main>
-
 </body>
 </html>
