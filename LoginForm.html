@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form validation in HTML & CSS | CodingNepal</title>
+  <title>Login Form</title>
   <link rel="stylesheet" href="LoginForm.css">
 </head>
 <body>
@@ -27,6 +26,55 @@
     </form>
     <div class="sign-txt">Not a member yet? <a href="#">Sign up now</a></div>
   </div>
-  <script src="LoginForm.js"></script>
+  <script>
+    const form = document.querySelector("form");
+        
+      eField = form.querySelector(".email"),
+      eInput = eField.querySelector("input"),
+      pField = form.querySelector(".password"),
+      pInput = pField.querySelector("input");
+
+      form.onsubmit = (e)=>{
+         e.preventDefault(); 
+        (eInput.value == "") ? eField.classList.add("error") : checkEmail();
+        (pInput.value == "") ? pField.classList.add("error") : checkPass();
+
+        eInput.onkeyup = ()=>{checkEmail();} 
+        pInput.onkeyup = ()=>{checkPass();} 
+       
+        function checkEmail(){ 
+
+          let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+          if(!eInput.value.match(pattern)){ 
+          eField.classList.add("error");
+          eField.classList.remove("valid");
+          let errorTxt = eField.querySelector(".error-txt");
+     
+          (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
+          }else{ 
+          eField.classList.remove("error");
+          eField.classList.add("valid");
+          }
+          
+        }
+
+        function checkPass(){ 
+
+            if(pInput.value == ""){ 
+            pField.classList.add("error");
+            pField.classList.remove("valid");
+            }else{ 
+            pField.classList.remove("error");
+            pField.classList.add("valid");
+            }
+
+        }
+  
+        if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+          window.location.href = form.getAttribute("action"); 
+        }
+        
+      }
+  </script>
 </body>
 </html>
