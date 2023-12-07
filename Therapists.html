@@ -4,198 +4,357 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Therapists</title>
-    <link rel="stylesheet" href="Therapists.css">
-
     <style>
+        .n{
+        background: white;
+        border-style: groove;
+        border-top: none;
+        height: 80px;
+        width: 100%;
+        }
 
-        h1{
-            display: flex;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            flex-wrap: nowrap;
-            color: green;
+        nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         }
-        .question{
-            display: flex;
-            justify-content: flex-start;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-style: italic;
-            font-size: x-large;
+
+        nav .lista{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
-        .answer{
+
+        nav .lista ul li{
+        display: inline;
+        list-style-type: none;
+        line-height: 80px;
+        margin-right: 20px;
+        color: black;
+        font-size: 15px;
+        }
+
+        nav .logo{
+        align-items: center;
+        line-height: 80px;
+        margin-left: 20px;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 27px;
+        font-weight: bolder;
+        }
+
+        body{
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+        }
+
+       .foto1{
+            height: 280px;
+            width: 100%;
+            background-size: 100% 100%;
+            background-image: url(foto1.jpeg);
             display: flex;
             justify-content: center;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        ol{
-            background-color: rgb(15, 110, 28);
-            border-radius: 10px;
+        h1{
+            color: rgb(8, 82,116);
+        }
+        p{
+            color: rgb(92, 90, 90);
+            margin: 10px 0;
         }
         .therapists{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
         }
-        .Ft{
-            display: block;
+        .therapist{
+            width: 23%;
             margin: 10px;
-            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically */
+            border: 1px solid rgb(200, 200, 200); /* Add a border */
+            border-radius: 10px; /* Add rounded corners to the border */
+            overflow: hidden; /* Ensure the border doesn't overlap the rounded corners of the image */
+            padding: 10px;
+
         }
-        .St{
-            display: block;
-            margin: 10px;
-            
+        .img{
+        width: 220px;
+        height: 250px;
+        border-radius: 8px;
+       }
+       .therapist:hover .img {
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+       }
+       .info{
+        margin-top: 10px;
+       }
+       ul{
+        list-style: none;
+        padding: 0;
+       }
+       .booknowbutton {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to right, rgb(67, 63, 63), rgb(110, 114, 111));
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        border-radius: 25px; 
+        cursor: pointer;
+        margin: 10px;
+        border: none; 
+        transition: background 0.3s ease; 
         }
-        .Tt{
-            display: block;
-            margin: 10px;
-            
-        }  
-        .Fot{
-            display: block;
-            margin: 10px;
-        }
+
+    .booknowbutton:hover {
+    background: linear-gradient(to right, rgb(67, 63, 63), rgb(110, 114, 111)); 
+    }
 
     </style>
 </head>
 <body>
-    <h1 class="h1">MEET OUR THERAPISTS</h1>
-    <hr>
-    <header class="h2">
-        <div class="question">
-            <p>Why is important to talk with a therapist?</p>
-        </div>
+    <div class="n">
+        <nav>
+            <div class="logo">
+                <img src="Logo-03-03.png" alt="Website Logo" style="width: 30px; height: 30px; margin-bottom: -5px;">
+                NAVIGATING THE MIND MAZE
+            </div>
+
+            <div class="lista">
+                <ul>
+                    <li><a href="#"></a>Home</li>
+                    <li><a href="#"></a>Learn More</li>
+                    <li><a href="#"></a>Our Therapists</li>
+                    <li><a href="#"></a>Contact Us</li>
+                    <li><img src="PersonLogo" alt="Person Logo" style="width: 25px; height: 25px; margin-bottom: -5px;">
+                    Log in</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     
-        <div class="answer">
-            <img src="therapist.jpg" alt="Therapist" style="height: 220px; width: 300px; margin-right: 20px;
-            margin-top: 20px;">
-            <ol>
-                <br>
-                <li>Well, talking to a therapist is like having a personal brain masseuse. 
-                Imagine your mind lounging on a comfy mental recliner while a therapist works out all the knots and tangles in your thoughts. 
-                It's like a spa day for your brain, where the only weight you're lifting is the burden of your worries.
-                </li>
-                <li>
-                    Therapists are the professional listeners you wish you had at family
-                     gatherings when Uncle Bob starts sharing his conspiracy theories. They're like the wizards of emotional Hogwarts, 
-                    helping you navigate the magical (and sometimes messy) realm of your feelings.
-                </li>
-                <li>
-                    It's the only place where it's socially acceptable to talk about your
-                     dreams without anyone suggesting that you've been watching too much sci-fi.
-                      Plus, therapists are like expert detectives, helping you unravel the mystery 
-                    of why you do the things you do, all while wearing a metaphorical Sherlock Holmes hat.
-                </li>
-                <li>
-                    In essence, talking to a therapist is like having a personal comedy show for your psyche -
-                    you provide the material, and they help you find the punchline to life's absurdities.
-                     So, why talk to a therapist? Because everyone deserves a little 
-                     laughter and a mental massage now and then!
-                </li>
-                <br>
-            </ol>
+    <header>
+        <div class="foto1">
+            <p style="font-size: xx-large;font-weight: bolder;color: cornsilk;">MEET OUR THERAPISTS</p>
         </div>
-        <br>
-        <img src="bar.jpg" alt="" style="height: 20px; width: 100%; border-radius: 8px;">
     </header>
+    
 
-    <main class="therapists">
-        
-        <div class="Ft">
-            <img src="joesph.jpg" alt="Joesph" style="height: 220px; width: 280px; margin-right: 20px;
-            margin-top: 20px; float: right;">
-            <h1>Joseph Smith,LMHC</h1>
-            <p>Get to know Joseph Smith,LMHC</p>
-            <p>Joseph Smith,LMHC, earned his Master's Degree in Clinical Mental Health Counseling
-            from Eastern Kentucky University in 2015 and has worked with patients in a clinical capacity 
-            for the past six years. While in graduate school, he was exposed to various clinical and research 
-            experiences, where he found his passion in examining the motivational factors of human behavior. 
-            Joseph's academic work strengthened his interest to work with individuals in a therapeutic capacity, 
-            which ultimately led to advanced experiential training in crisis interventions and the treatment of 
-            individuals with severe and persistent mental illness. Before relocating to New York City, he worked 
-            with individuals in under-served communities in the Appalachian region.
-            </p>
-            <p>oseph subscribes to a humanistic, motivational enhancement, and cognitive behavioral framework.
-            Understanding the benefit of therapeutic rapport, Joseph fosters an environment of self-acceptance 
-            and self-awareness while promoting intrinsic motivation for patients to act as their own catalyst of change. 
-            In addition, Joseph has a passion for working with individuals from diverse backgrounds,
-            the LGBTQIA+ community, women with reproductive challenges, and victims of domestic violence.
-            </p>
-        </div>
-        <hr>
-        <div class="St">
-            <img src="sandra.jpeg" alt="Sandra" style="height: 220px; width: 280px; margin-right: 20px;
-            margin-top: 20px; float: left;">
-            <h1>Sandra Estimable,LMHC</h1>
-            <p>Get to know Sandra Estimable, LMHC</p>
-            <p>Hello! I am a licensed therapist with over 13 years of experience working with couples 
-            and individuals. I specialize in a wide variety of topics including anxiety, depression,
-            family and marital issues, grief, and more. I take a solution-focused and person-centered approach to
-            therapy. I help guide clients to a new level of self-understanding and acceptance, 
-            and have helped many clients overcome self-esteem concerns and relationship insecurities.
-            </p>
-            <p>I speak with a warm, approachable tone and have a nonjudgmental stance. 
-            I help clients create specific goals and check in each week to monitor progress.
-            Goals help us reach our highest potential and maintain positive interactions within our world. 
-            An ideal client for me is
-            one who has an open mind and is ready to work on their concerns, not run from them.
-            </p>
-            <p>In our first session, we'll have a nice chat about your past, present, and the future.
-            We'll discuss what makes healthy relationships and effective communication. 
-            I genuinely enjoy meeting new people and supporting them to 
-            create the change they desire, and I hope you reach out if you think we might be a good fit.
-            </p>
-        </div>
-        <hr>
-        <div class="Tt">
-            <img src="jami.jpg" alt="Jami" style="height: 220px; width: 280px; margin-right: 20px;
-            margin-top: 20px; float: right;">
-            <h1>Jami Jacobson, LMHC</h1>
-            <p>Get to know Jami Jacobson, LMHC</p>
-            <p>Jami has experience as both a mental health professional and as a social worker
-             in a variety of settings in New York City. She has worked with individuals, families and t
-             he LGBTQIA+ community in hospitals,
-             educational training centers, community outreach and housing programs, and family services.
-            </p>
-            <p>Her specializations include treating Phobias, Trauma, and Anxiety Disorders: 
-            specifically Obsessive Compulsive Disorder, Generalized Anxiety and Social Anxiety. 
-            She utilizes techniques from Cognitive Behavioral Therapy (CBT) and Dialectical Behavior Therapy (DBT). 
-            She has also completed Phase One training in Brainspotting,
-            which specializes in addressing traumas in the subconscious and unconscious mind.
-            </p>
-            <p>
-            Jami believes therapy should be a wholistic approach that incorporates 
-            both the body and the mind. She has a warm demeanor and seeks to create a safe, comfortable,
-            and judgement-free zone, personalized for each client's unique needs. She seeks to educate her 
-            clients on the ties between feelings, thoughts, and behaviors, 
-            as well as how our environment and our past can have an influence on our day-to-day lives.
-            </p>
-        </div>
-        <hr>
-        <div class="Fot">
-            <img src="geoffrey.jpeg" alt="Geoffery" style="height: 220px; width: 280px; margin-right: 20px;
-            margin-top: 20px; float: left;">
-            <h1>Geoffrey Edelstein, LCSW</h1>
-            <p>Get to know Geoffrey Edelstein, LCSW</p>
-            <p>Geoffrey Edelstein, LCSW, is a Licensed Certified Social Worker. 
-            His practice is informed by the latest neuro-cognitive sciences, emphasizing anxiety, 
-            depression, bipolar disorder, and other mental health conditions. In addition to working with children, 
-            adolescents, and adults, he also works with couples and families.
-            Geoffrey also has experience working with LGBTQ+ clients.
-            </p>
-            <p>Geoffrey's experience includes Dialectical Behavior Therapy, Cognitive Behavior Therapy, 
-            and psychodynamic psychotherapy, 
-            but his unique approach to therapy also integrates music, writing, drawing, and origami.
-            </p>
-            <p>In crafting a treatment plan, Geoffrey draws on his years of clinical experience from 
-            Four Winds Hospital. There, Geoffrey served as the Coordinator of Children's Services and 
-            facilitated care for children ages 8-13 in a Dialectical Behavior Therapy group setting. 
-            Geoffrey also worked with adults and adolescents in Four Wind's inpatient units. 
-            Prior to this, Geoffrey worked in respite services at Family Services of Westchester and
-            the Federally Qualified Health Center of the Hudson Valley Cerebral Palsy Association.
-            Geoffrey is committed to delivering quality mental health services to his patients and is 
-            passionate about helping them reach their goals.
-            </p>
+<main>
+    <div class="hyrja">
+        <br>
+        <h1 style="color: rgb(8, 82, 116);margin: 10px; margin-right: 2px;">Get to know us</h1>
+        <p style="color: rgb(92, 90, 90);margin: 10px; margin-right: 2px;">Our therapists provide a supportive and creative space to explore the work of psychotherapy.
+            We work with individuals,couples,families and adolescents.Start the healing process and get more information
+            by choosing one of our therapists below...
+            <br>
+        </p>
+
+        <div class="therapists">
+            <div class="therapist">
+                <img src="image0.jpeg" alt="" class="img" style="height: 250px;">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Marcus Carter</b></li>
+                        <li><b>Fee:</b> $200 per session</li>
+                        <li><b>Areas of Focus:</b>Relationship counseling</li>
+                        <li><b>Specialized Skills:</b> Couples Therapy</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image1.jpeg" alt="" class="img" style="height: 250px;">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Olivia Richards</b></li>
+                        <li><b>Fee:</b> $150 per session</li>
+                        <li><b>Areas of Focus:</b>Anxiety Management</li>
+                        <li><b>Specialized Skills:</b>Mindfulness Techniques</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image10.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Xavier Rodriguez</b></li>
+                        <li><b>Fee:</b> $180 per session</li>
+                        <li><b>Areas of Focus:</b>Trauma Recovery</li>
+                        <li><b>Specialized Skills:</b>Trauma-Informed</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image11.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Christopher Bennett</b></li>
+                        <li><b>Fee:</b> $130 per session</li>
+                        <li><b>Areas of Focus:</b>Family Dynamics</li>
+                        <li><b>Specialized Skills:</b>Conflict Resolution</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image12.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Gabriel Moreno</b></li>
+                        <li><b>Fee:</b> $170 per session</li>
+                        <li><b>Areas of Focus:</b>Addiction Recovery</li>
+                        <li><b>Specialized Skills:</b>Abuse Counseling</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image13.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Samuel Foster</b></li>
+                        <li><b>Fee:</b> $200 per session</li>
+                        <li><b>Areas of Focus:</b>LGBTQ+ Counseling</li>
+                        <li><b>Specialized Skills:</b>Affirmative Therapy</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image8.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Aisha Khan</b></li>
+                        <li><b>Fee:</b> $140 per session</li>
+                        <li><b>Areas of Focus:</b>Cultural Identity and Issues</li>
+                        <li><b>Specialized Skills:</b>Diversity Awareness</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image14.jpeg" alt="" class="img" style="height: 250px;">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Lily Nguyen</b></li>
+                        <li><b>Fee:</b>$125 per session</li>
+                        <li><b>Areas of Focus:</b>Adolescent counseling</li>
+                        <li><b>Specialized Skills:</b>Parent-child therapy</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image15.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Jordan Lewis</b></li>
+                        <li><b>Fee:</b> $180 per session</li>
+                        <li><b>Areas of Focus:</b>ADHD</li>
+                        <li><b>Specialized Skills:</B>ADHD Coaching</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image16.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Alejandro Ramos</b></li>
+                        <li><b>Fee:</b> $175 per session</li>
+                        <li><b>Areas of Focus:</b>Anger Management</li>
+                        <li><b>Specialized Skills:</b>Anger related disorders</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image9.jpeg" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Raj Gupta</b></li>
+                        <li><b>Fee:</b> $145 per session</li>
+                        <li><b>Areas of Focus:</b>Eating disorders</li>
+                        <li><b>Specialized Skills:</b>Nutritional Counseling</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image7.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Emirio White</b></li>
+                        <li><b>Fee:</b> $160 per session</li>
+                        <li><b>Areas of Focus:</b>Insomnia,sleep disorder</li>
+                        <li><b>Specialized Skills:</b>Cognitive Behavioral</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image3.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Brandon Awadis</b></li>
+                        <li><b>Fee:</b> $160 per session</li>
+                        <li><b>Areas of Focus:</b> Self-esteem</li>
+                        <li><b>Specialized Skills:</b>Acceptance and Comitment Therapy</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image4.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Jimmy Patel</b></li>
+                        <li><b>Fee:</b> $150 per session</li>
+                        <li><b>Areas of Focus:</b>Grief and Loss</li>
+                        <li><b>Specialized Skills:</b>Bereavement Counseling and Patience Therapy</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image6.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.John Garcia</b></li>
+                        <li><b>Fee:</b>$120 per session</li>
+                        <li><b>Areas of Focus:</b>Career Counseling</li>
+                        <li><b>Specialized Skills:</b>Goal Setting and Self-Confidence</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div>
+            <!-- <div class="therapist">
+                <img src="image2.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Aisha Khan</b></li>
+                        <li><b>Fee:</b> $200 per session</li>
+                        <li><b>Areas of Focus:</b>Addiction Recovery</li>
+                        <li><b>Specialized Skills:</b>Substance Abuse Counseling</li>
+                    </ul>
+                    <button class="booknowbutton">Book now</button>
+                </div>
+            </div> -->
 
         </div>
 
-    </main>
+    </div>
+
+</main>
+
 </body>
 </html>

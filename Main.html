@@ -127,6 +127,83 @@
         padding: 30px 40px;
         margin: 100px 200px;
         }
+        .maini{
+           border-radius: 20px;
+           align-items: center;
+           /* background-color: lightblue; */
+        }
+        .pp{
+            font-size: xx-large;
+            display: flex;
+            justify-content: center;
+            margin-bottom: -10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        .pp1{
+            display: flex;
+            justify-content: center;
+            font-family: 'Times New Roman', Times, serif;
+           font-style: italic;
+        }
+        .nt{
+            display: flex;
+            justify-content: center;
+            margin-bottom: -12px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        .center{
+            display: flex;
+            justify-content: space-between;
+            font-size: x-large;
+            margin-bottom: -35px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: italic;
+        }
+        .p1{
+            flex: 1;
+            margin: 10px;
+        }
+        .p2{
+            flex: 1;
+            margin: 10px;
+        }
+        .p3{
+            flex: 1;
+            margin: 10px;
+        }
+        .p4{
+            flex: 1;
+            margin: 10px;
+        }
+        .permbajtja{
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .majtas{
+            flex: 1;
+            margin: 10px;
+        }
+        .qender1{
+            flex: 1;
+            margin: 10px;
+        }
+        .qender2{
+            flex: 1;
+            margin: 10px;
+        }
+        .djathtas{
+            flex: 1;
+            margin: 10px;
+        }
+        .fundi{
+            margin-left: 80px;
+            justify-content: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
   </style>
 </head>
 <body>
@@ -150,6 +227,48 @@
             </div>
         </nav>
     </div>
+    <div id="kontenti">
+        <header>
+            <h2></h2>
+            <img id="slideshow">
+        </header>
+    </div>
+    <br>
+    <main class="maini">
+        <br>
+            <div class="center">
+                <p class="p1"><b>Holistic Healing Hub:</b></p>
+                <p class="p2"><b>Actionable Advice:</b></p>
+                <p class="p3"><b>Community Corner:</b></p>
+                <p class="p4"><b>Expert Guides:</b></p>
+            </div>
+            <br>
+            <div class="permbajtja">
+                 <div class="majtas">
+                    <p>We're not just here for the symptoms; we're here for the whole you. 
+                        Navigating the Mind Maze provides a holistic approach to mental wellness, addressing mind, body, and spirit.</p>
+                </div>
+                <div class="qender1">
+                    <p>Tired of vague suggestions? Our website is packed with actionable recommendations to help you kick anxiety, ADHD, and depression to the curb. 
+                        Practical tips, exercises, and resources - consider them your mental health toolkit</p>
+                </div>
+                <div class="qender2">
+                    <p>Because no hero embarks on a quest alone! Join our community of fellow mental health adventurers.
+                         Share stories, swap strategies, and lift each other up on your journey to well-being.</p>
+                </div>
+                <div class="djathtas">
+                    <p>Our team of mental health wizards (aka experts) curates the latest research,
+                         trends, and techniques to keep you informed and empowered.</p>
+                </div>
+                <br>
+                
+            </div>
+            <div class="fundi">
+                <p>So, buckle up, fellow explorer! Your mental health adventure awaits at Navigating the Mind Maze.
+                 Together, let's turn the quest for well-being into the epic saga it was meant to be!</p>
+            </div>
+            <br>
+    </main>
 
     <div class="title-container">
         <h1>We've curated a collection of books and podcasts just for you.</h1>
@@ -174,6 +293,46 @@
             </div>
     </div>
 
+    <script>
+        //SLIDERI I PARE
+        let i = 0;
+        let imgArray = ['slider5.jpeg','slider2.jpeg','slider3.jpeg','slider4.jpeg','slider1.jpeg','slider6.jpeg'];
+
+       
+        function changeImg() {
+        let slideshowImg = document.getElementById('slideshow');
+        slideshowImg.src = imgArray[i];
+        slideshowImg.width = 1265; // width per fotot
+        slideshowImg.height = 500; // height per fotot
+    }
+
+        function nextImg() {
+            if (i < imgArray.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            changeImg();
+        }
+
+        function prevImg() {
+            if (i > 0) {
+                i--;
+            } else {
+                i = imgArray.length - 1;
+            }
+            changeImg();
+        }
+
+        function startSlider() {
+            setInterval(nextImg, 4000); //Ndryshoje fotografine cdo 4 sekonda
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            changeImg(); //Tregoje fotografine e pare
+            startSlider(); //Filloje sliderin automatik
+        });
+    </script>
 
   <script>
     let currentIndex = 0;
