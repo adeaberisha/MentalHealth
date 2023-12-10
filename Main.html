@@ -130,7 +130,6 @@
         .maini{
            border-radius: 20px;
            align-items: center;
-           /* background-color: lightblue; */
         }
         .pp{
             font-size: xx-large;
@@ -204,6 +203,30 @@
             font-family: 'Times New Roman', Times, serif;
             font-style: italic;
         }
+        /* footer */
+        .footer {
+            padding:50px 0;
+            color:rgb(64, 63, 63);
+            background-color: #bed8dc;
+        }
+
+        .footer h3 {
+            margin-top:0;
+            margin-bottom:12px;
+            font-weight:bold;
+            font-size:16px;
+        }
+       .tekst{
+            margin-left: 10px;
+        }
+        .footer .copyright {
+            text-align:center;
+            padding-top:24px;
+            font-size:13px;
+            color: rgb(64, 63, 63);
+            margin-bottom:0;
+        }
+
   </style>
 </head>
 <body>
@@ -214,12 +237,17 @@
                 <img src="Logo-03-03.png" alt="Website Logo" style="width: 30px; height: 30px; margin-bottom: -5px;">
                 NAVIGATING THE MIND MAZE
             </div>
+            <script>
+                function redirectToPage(PageURL){
+                    window.location.href = PageURL;
+                }
+            </script>
 
             <div class="lista">
                 <ul>
-                    <li><a href="#"></a>Home</li>
+                    <li><a href="#"></a>Home</li> 
                     <li><a href="#"></a>Learn More</li>
-                    <li><a href="#"></a>Our Therapists</li>
+                    <li><a href="#"></a>Our Therpists</li>
                     <li><a href="#"></a>Contact Us</li>
                     <li><img src="PersonLogo" alt="Person Logo" style="width: 25px; height: 25px; margin-bottom: -5px;">
                     Log in</li>
@@ -281,16 +309,33 @@
     
     <div class="main-container">
         <div class="slider-container">
-            <button class="prev-button" onclick="changeSlide(-1)">❮</button>
+            <button class="prev-button" onclick="changeSlide(-1)"></button>
             <div class="slider">
                 <img src="Books-1-02.jpg" alt="Image 1" class="slide">
                 <img src="Books-2-02.jpg" alt="Image 2" class="slide">
             </div>
-                <button class="next-button" onclick="changeSlide(1)">❯</button>
+                <button class="next-button" onclick="changeSlide(1)"></button>
         </div>
             <div class="podcast-container">
                 <img src="Podcasts1.-02-02.jpg" alt="Podcasts">
             </div>
+    </div>
+    <br>
+    <div class="footer">
+        <footer>
+            <div class="container">
+                    <div class="tekst">
+                        <h3 style="color: black;font-size: x-large;">NAVIGATING THE MIND MAZE</h3>
+                        <p>Embark on a journey through the labyrinth of the mind with us at Navigating the Mind Maze. 
+                            Your compass to mental well-being, offering insights, support, and resources to navigate the intricate paths
+                            of mental health. 
+                            Together, let's navigate the maze and discover the strength within.
+                            Learn more about us <a href="ContactUs.html" style="color: rgb(64, 63, 63);">by clicking here</a>.</p>
+                    </div>
+                </div>
+                <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
+            </div>
+        </footer>
     </div>
 
     <script>
