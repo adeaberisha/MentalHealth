@@ -5,67 +5,62 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Contact Us</title>
     <style>
-
         *{
             margin: 0px;
             padding: 0px;
             text-decoration: none;
             box-sizing: border-box;
         }
-
         body{
             background-color: #bed8dc;
             font-family: 'Times New Roman', Times, serif;
         }
-
         .n{
-        background: white;
-        border-style: groove;
-        border-top: none;
-        height: 80px;
-        width: 100%;
+            background: white;
+            border-style: groove;
+            border-top: none;
+            height: 80px;
+            width: 100%;
         }
-
         nav{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
-
         nav .lista{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
-
         nav .lista ul li{
-        display: inline;
-        list-style-type: none;
-        line-height: 80px;
-        margin-right: 20px;
-        color: black;
-        font-size: 15px;
+            display: inline;
+            list-style-type: none;
+            line-height: 80px;
+            margin-right: 20px;
+            color: black;
+            font-size: 15px;
         }
-
+        nav .lista ul li a{
+           color: black;
+        }
+        nav .lista ul li a:hover{
+            color: #66a5ad;
+        }
         nav .logo{
-        align-items: center;
-        line-height: 80px;
-        margin-left: 20px;
-        color: black;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 27px;
-        font-weight: bolder;
+            align-items: center;
+            line-height: 80px;
+            margin-left: 20px;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 27px;
+            font-weight: bolder;
         }
-
         .titulli{
             display: flex;
             justify-content: center;
             margin-top: 50px;
             margin-bottom: 40px;
-            
         }
-
         .contactus{
             display: flex;
-            /* flex-wrap: wrap; */
             justify-content: space-evenly;
         }
         .contact{
@@ -80,18 +75,15 @@
             height: 220px;
             width: 250px;
         }
-
         .contactus .contact .img2{
             height: 215px;
             width: 250px;
         }
-
         .contactus .contact .img3{
             height: 210px;
             width: 300px;
             margin-top: 15px;
         }
-
         .info{
             margin-top: 10px;
         }
@@ -104,7 +96,6 @@
             align-items: center;
             justify-content: center;
         }
-
         ul:first-child{
            display: inline;
         }
@@ -121,12 +112,14 @@
 
             <div class="lista">
                 <ul>
-                    <li><a href="#"></a>Home</li>
-                    <li><a href="#"></a>Learn More</li>
-                    <li><a href="#"></a>Our Therapists</li>
-                    <li><a href="#"></a>Contact Us</li>
-                    <li><img src="PersonLogo" alt="Person Logo" style="width: 25px; height: 25px; margin-bottom: -5px;">
-                    Log in</li>
+                    <li><a href="Main.html">Home</a></li>
+                    <li><a href="LearnMore.html">Learn More</a></li>
+                    <li><a href="Therapists.html">Our Therapists</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><img src="PersonLogo" alt="Person Logo" 
+                        style="width: 25px; height: 25px; margin-bottom: -5px;">
+                        <a href="LoginForm.html">Log in</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -168,7 +161,8 @@
                         <li>navigatingthemindmaze@gmail.com</li>
                     </ul>
                 </div>
-            </div><div class="contact">
+            </div>
+            <div class="contact">
                 <div class="fotot">
                     <img src="SocialMedia-02.png" alt="Social Media" class="img3">
                 </div>
@@ -186,7 +180,6 @@
             </div>
         
         </div>
-        
     </main>
 </body>
 </html>
