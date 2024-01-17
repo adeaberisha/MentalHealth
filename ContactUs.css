@@ -49,8 +49,8 @@ nav .logo{
 .titulli{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
+    margin-top: 50px; 
+    margin-bottom: 40px; 
 }
 .contactus{
     display: flex;
@@ -91,4 +91,36 @@ li{
 }
 ul:first-child{
    display: inline;
+}
+@media screen and (max-width: 660px){
+    nav .lista {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px; /* Hapsira per smaller screens */
+    }
+    
+    .titulli {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px; /* Hapsira per smaller screens */
+        margin-bottom: 20px; /* Hapsira per smaller screens */
+    }
+    .contact {
+        width: 100%; /* hapsira maksimale per telefon */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+    .contactus .contact .img3{
+        width: 100%; /* hapsira maksimale per telefon */
+        max-width: 300px; /* vendosja e nje limiti per madhesine e fotos */
+        height: auto; 
+        margin-top: 15px;
+    }
+    .contactus {
+        display: flex;
+        flex-wrap: wrap; /* wrap ne screens me te vogla */
+        justify-content: center;
+    }
+    
 }

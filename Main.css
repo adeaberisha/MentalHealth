@@ -44,10 +44,13 @@ nav .logo{
     font-family: 'Times New Roman', Times, serif;
     font-size: 27px;
     font-weight: bolder;
-}
+} 
 body{
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
+}
+.kontenti{
+    width: 100%
 }
 .slider-container{
     position: relative;
@@ -184,7 +187,7 @@ body{
     font-style: italic;
 }
 /* footer */
-.footer {
+ .footer {
     padding:50px 0;
     color:rgb(64, 63, 63);
     background-color: #bed8dc;
@@ -203,5 +206,4 @@ body{
     padding-top:24px;
     font-size:13px;
     color: rgb(64, 63, 63);
-    margin-bottom:0;
-}
+} 

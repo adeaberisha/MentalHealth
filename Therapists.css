@@ -88,7 +88,7 @@ p{
     border-radius: 8px;
 }
 .therapist:hover .img {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* vendos nje hije */
 }
 .info{
     margin-top: 10px;
@@ -142,3 +142,134 @@ ul{
     color: rgb(64, 63, 63);
     margin-bottom:0;
 }
+ @media screen and (max-width:660px){
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .n {
+        background: white;
+        border-style: groove;
+        border-top: none;
+        height: 80px;
+        width: 100%;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav .lista {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: 10px;
+    }
+    
+    nav .lista ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav .lista ul li {
+        display: block;
+        list-style-type: none;
+        line-height: 40px; /* E rregulluar per telefona */
+        margin-bottom: 10px;
+        color: black;
+        font-size: 15px;
+        text-align: center; /*E vendosur ne qender per telefonet */
+    }
+    
+    nav .lista ul li a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    nav .lista ul li a:hover {
+        color: #66a5ad;
+    }
+    
+    nav .logo {
+        line-height: 80px;
+        margin: 10px 0;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 27px;
+        font-weight: bolder;
+        text-align: center; /* Ne qender per telefona */
+    }
+    
+    .foto1 {
+        height: 280px;
+        width: 100%;
+        background-size: cover; /* e zvogeluar si cover per telefona */
+        background-image: url(foto1.jpeg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        color: rgb(8, 82, 116);
+        text-align: center; /* teksti n qender per telefona */
+    }
+    
+    p {
+        color: rgb(92, 90, 90);
+        margin: 10px 0;
+        text-align: center; /*teksti ne qender per telefona */
+    }
+    
+    .therapists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .therapist {
+        width: 100%; /* width full per screens me te vogla */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 10px;
+    }
+    
+    .img {
+        width: 100%; /* width full per screens me te vogla */
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .therapist:hover .img {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .info {
+        margin-top: 10px;
+        text-align: center; /*ne qender e vendosur per telefona*/
+    }
+    
+    .footer h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center; /* ne qender per telefona */
+    }
+    
+} 
