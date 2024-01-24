@@ -1,0 +1,216 @@
+<?php include("navbar.php")?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More</title>
+    <link rel="stylesheet" href="LearnMore.css">
+</head>
+<body>
+    <br>
+    <br>
+
+    <div class="opening">
+        <img class="Photo"src="Images/Mental Illness-06.jpg" alt="Mental Illness">
+    </div>
+
+    <div class="belownav">
+
+        <div class="title">
+            <h1 class="t">Mental illness</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="subtitle">
+                <h1>Overview</h1>
+            </div>
+
+            <div class="teksti">
+                <p>Mental illness, or mental health disorders, includes a range of conditions affecting how people feel, think, and behave. 
+                    Examples are depression, anxiety disorders, schizophrenia, and addictive behaviors. 
+                </p>
+                <p>
+                    The difference between everyday mental health concerns and mental illness 
+                    lies in the duration and impact of symptoms on daily life.
+                    Most of us experience fluctuations in mental well-being, but when ongoing symptoms lead to persistent stress 
+                    and disrupt daily functioning, it qualifies as a mental illness. 
+                </p>
+                <p>
+                    These conditions can cause personal distress and affect areas like school, work, and relationships.
+                    It's crucial to recognize mental health concerns early, as prompt intervention can improve outcomes. 
+                    Seeking help becomes important when symptoms persist and impact daily life. 
+                    Treatment often involves a combination of medications and psychotherapy. 
+                    Medications help manage symptoms, while psychotherapy provides a supportive space to explore and 
+                    address underlying issues.
+                </p>
+                <p>
+                    Reducing the stigma around mental health is important, encouraging open conversations 
+                    and promoting a holistic approach to well-being that considers both physical and mental health. 
+                    Creating awareness about the importance of mental health maintenance, self-care, and seeking help contributes to 
+                    building a supportive and understanding community.
+                </p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="container">
+                <div class="subtitle">
+                    <h1>Symptoms</h1>
+                </div>
+                <div class="teksti">
+                    <p>Indicators of mental health issues may manifest as:</p>
+                    <ul>
+                        <li>Persistent feelings of sadness</li>
+                        <li>Difficulty concentrating or confused thinking</li>
+                        <li>Overwhelming fears, excessive worries, or intense guilt</li>
+                        <li>Drastic mood swings</li>
+                        <li>Withdrawal from social activities</li>
+                        <li>Persistent fatigue, low energy, or sleep disturbances</li>
+                        <li>Losing touch with reality, experiencing paranoia or hallucinations</li>
+                        <li>Inability to handle everyday stressors</li>
+                        <li>Difficulty understanding and connecting with others</li>
+                        <li>Issues with substance use</li>
+                        <li>Major shifts in eating patterns</li>
+                        <li>Changes in libido</li>
+                        <li>Intense anger, hostility, or violent tendencies</li>
+                        <li>Suicidal thoughts</li>
+                    </ul>
+                </div>
+         </div>
+
+         <hr>
+            <div class="container2">
+                
+                
+                <div class="subtitle">
+                        <h1>When to see a doctor</h1>
+                </div>
+
+                <div class="teksti">
+                        <p>
+                            If you notice any of these signs, seeking help from your primary care provider or a mental health professional is crucial.
+                            Many mental health conditions do not improve on their own, and without treatment, they may worsen over time, leading to serious consequences.
+                        </p>
+                </div>
+
+                <img src="Images/I think you should talk to someone-01.png" alt="I think"> 
+
+                <div class="subtitle">
+                        <h1>Supporting a loved one</h1>
+                </div>
+
+                <div class="teksti">
+                        <p>
+                            If someone you care about is displaying signs of mental illness, engage in an open and sincere conversation
+                            with them about your observations and concerns. While you can't compel them to seek professional help,
+                            you can provide encouragement and assistance. Help them connect with a qualified mental health professional 
+                            and assist in scheduling an appointment. You might even consider accompanying them to the appointment.
+                        </p>
+                </div>
+
+                <form>
+                        <button class="b" formaction="Therapists.html">Therapists we recommend</button>
+                </form>
+
+            </div>
+
+            <hr>
+
+            <div class="container3">
+                <div class="subtitle">
+                    <h1>Causes</h1>
+                </div>
+                <div class="teksti">
+                    <p>Mental disorders are believed to stem from a combination of genetic and environmental influences:</p>
+                    <ul>
+                        <li>
+                            <span><b>Inherited traits:</b></span> Individuals with a family history of mental illness are more likely to 
+                            experience such conditions. 
+                            Specific genes may heighten the susceptibility to mental disorders, 
+                            with external life circumstances acting as potential triggers.
+                        </li>
+                        <li>
+                            <span><b>Environmental exposures before birth:</b></span>
+                            Factors such as exposure to stressors, 
+                            inflammatory conditions, toxins, or substances like alcohol and drugs during fetal development 
+                            can sometimes be associated with the onset of mental illnesses.
+                        </li>
+                        <li><span><b>Brain chemistry:</b></span>Mental health is intricately linked to neurotransmitters, 
+                            natural chemicals in the brain transmitting signals throughout the body. 
+                            Disruptions in the neural networks involving these chemicals can alter the functioning of nerve 
+                            receptors and systems, contributing to conditions like depression and other emotional disorders.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="container3">
+                <div class="subtitle">
+                    <h1>Prevention</h1>
+                </div>
+                <div class="teksti">
+                    <p>
+                        While there is no foolproof method to prevent mental illness, taking proactive measures to manage stress, 
+                        enhance resilience, and foster self-esteem may contribute to better symptom control. 
+                        Consider the following steps:</p>
+                    <ul>
+                        <li>
+                            <span><b>Be attentive to warning signs:</b></span>
+                            Collaborate with your doctor or therapist to identify potential triggers 
+                            for your symptoms. Develop a plan outlining steps to take if symptoms reappear, 
+                            and promptly reach out to your healthcare professional if you observe any changes in symptoms or 
+                            overall well-being. Enlist the support of family members or friends in monitoring for warning signs.
+                        </li>
+                        <li>
+                            <span><b>Prioritize routine medical care:</b></span>
+                            Regular checkups and visits to your primary care provider are crucial, 
+                            especially when you are not feeling well. This ensures prompt identification and 
+                            treatment of any new health concerns or potential side effects of medication.
+                        </li>
+                        <li>
+                            <span><b>Seek help promptly:</b></span>
+                            Mental health conditions may be more challenging to address if intervention is delayed until 
+                            symptoms worsen. Opting for long-term maintenance treatment can also play a role in preventing symptom 
+                            relapse.
+                        <li><span><b>Practice self-care:</b></span>
+                            Mental health is intricately linked to neurotransmitters, adequate sleep, a nutritious diet, 
+                            and regular physical activity are foundational aspects of self-care. 
+                            Strive to maintain a consistent daily routine. If you encounter difficulties with sleep or have
+                            questions about diet and exercise, consult with your primary care provider for guidance.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="end">
+                <h1 class="t">&rarr; &nbsp;<a href="Main.html#recs">Recommendations</a></h1>
+            </div>
+    
+        </div>
+
+    <div class="footer">
+        <footer>
+            <div class="container">
+                    <div class="tekst">
+                        <h3 style="color: black;font-size: x-large;">NAVIGATING THE MIND MAZE</h3>
+                        <p>Embark on a journey through the labyrinth of the mind with us at Navigating the Mind Maze. 
+                            Your compass to mental well-being, offering insights, support, and resources to navigate the intricate paths
+                            of mental health. 
+                            Together, let's navigate the maze and discover the strength within.
+                            Learn more about us <a href="ContactUs.html" style="color: rgb(64, 63, 63); text-decoration: none;">by clicking here</a>.</p>
+                    </div>
+            </div>
+                <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
+        </footer>
+    </div>
+</body>
+</html>
+

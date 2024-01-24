@@ -8,44 +8,6 @@ body{
     background-color: #bed8dc;
     font-family: 'Times New Roman', Times, serif;
 }
-.n{
-    background: white;
-    border-style: groove;
-    border-top: none;
-    height: 80px;
-    width: 100%;
-}
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-nav .lista{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-nav .lista ul li{
-    display: inline;
-    list-style-type: none;
-    line-height: 80px;
-    margin-right: 20px;
-    color: black;
-    font-size: 15px;
-}
-nav .lista ul li a{
-   color: black;
-}
-nav .lista ul li a:hover{
-    color: #66a5ad;
-}
-nav .logo{
-    align-items: center;
-    line-height: 80px;
-    margin-left: 20px;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 27px;
-    font-weight: bolder;
-}
 .titulli{
     display: flex;
     justify-content: center;

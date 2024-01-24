@@ -8,104 +8,6 @@ body{
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
 }
-
-/*NAVIGATION BAR*/
-.n{
-    background: white;
-    border-style: groove;
-    border-top: none;
-    height: 80px;
-    width: 100%;
-}
-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-nav .lista{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-nav .lista ul li{
-    display: inline;
-    list-style-type: none;
-    line-height: 80px;
-    margin-right: 20px;
-    color: black;
-    font-size: 15px;
-}
-nav .lista ul li a{
-    color: black;
-}
-nav .lista ul li a:hover{
-    color: #66a5ad;
-}
-nav .logo{
-    align-items: center;
-    line-height: 80px;
-    margin-left: 20px;
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 27px;
-    font-weight: bolder;
-} 
-.hamburger-menu{
-    line-height: 80px;
-    font-size: 27px;
-    margin-right: 10px;
-}
-
-/*RESPONSIVITETI I NAVIGATION BAR*/
-@media screen and (max-width: 901px) {
-
-    .lista ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-    }
-
-    .lista ul.show {
-        display: flex;
-    }
-
-    .lista ul li {
-        margin: 10px;
-        text-align: center;
-    }
-
-} 
- 
-@media screen and (max-width: 407px) {
-
-    .hamburger-menu{
-        font-size: 18px;
-    }
-
- } 
-
-@media screen and (max-width: 931px) {
-
-    nav .logo{
-    font-size: 18px;
-    }
-
-} 
-
-@media screen and (min-width: 901px) {
-
-    .hamburger-menu {
-        display: none;
-    }
-
-}
-
-
-/*==========================*/
-
-
 .container{
     display: flex;
     flex-direction: column;
@@ -199,17 +101,6 @@ hr{
     padding: 10px;
     font-size: 20px;
 }
-.footer {
-    padding:50px 0;
-    color:rgb(64, 63, 63);
-    background-color: #bed8dc;
-}
-.footer h3 {
-    margin-top:0;
-    margin-bottom:12px;
-    font-weight:bold;
-    font-size:16px;
-} 
 
 /*RESPONSIVITETI*/
 @media screen and (max-width: 799px){

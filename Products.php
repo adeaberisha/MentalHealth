@@ -1,5 +1,6 @@
 <?php 
 include("DatabaseConnection.php");
+include("navbar.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,38 +13,11 @@ include("DatabaseConnection.php");
  
 </head>
 <body>
-    <div class="n">
-        <nav>
-            <div class="logo">
-                <img src="Logo-03-03.png" alt="Website Logo" style="width: 30px; height: 30px; margin-bottom: -5px;">
-                NAVIGATING THE MIND MAZE
-            </div>
-
-            <div class="lista">
-                <ul>
-                    <li><a href="Main.html">Home</a></li>
-                    <li><a href="LearnMore.html">Learn More</a></li>
-                    <li><a href="Therapists.html">Our Therapists</a></li>
-                    <li><a href="ContactUs.html">Contact Us</a></li>
-                    <li><img src="PersonLogo" alt="Person Logo" 
-                        style="width: 25px; height: 25px; margin-bottom: -5px;">
-                        <a href="LoginForm.html">Log in</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    
-    <header>
-        
-    </header>
-    
-
 <main>
     <div class="hyrja">
         <div class="merchendise">
             <div class="merch">
-                <img src="merch1.jpeg" alt="" class="img" >
+                <img src="Images/merch1.jpeg" alt="" class="img" >
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
@@ -53,7 +27,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch2.jpeg" alt="" class="img" >
+                <img src="Images/merch2.jpeg" alt="" class="img" >
                 <div class="info">
                     <ul>
                         <li><b>"It's Okay" Original Hoodie</b></li>
@@ -63,7 +37,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch3.jpeg" alt="" class="img">
+                <img src="Images/merch3.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
@@ -73,7 +47,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch4.jpeg" alt="" class="img">
+                <img src="Images/merch4.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Project Happiness Hoodie</b></li>
@@ -83,7 +57,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch5.jpeg" alt="" class="img">
+                <img src="Images/merch5.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Nick Portrait Project Hoodie</b></li>
@@ -93,7 +67,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch6.jpeg" alt="" class="img">
+                <img src="Images/merch6.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
@@ -103,7 +77,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch7.jpeg" alt="" class="img">
+                <img src="Images/merch7.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>"Not The Answer" Hoodie</b></li>
@@ -113,7 +87,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch8.jpeg" alt="" class="img" >
+                <img src="Images/merch8.jpeg" alt="" class="img" >
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
@@ -123,7 +97,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch9.jpeg" alt="" class="img">
+                <img src="Images/merch9.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>"Not The Answer" Hoodie</b></li>
@@ -133,7 +107,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch10.jpeg" alt="" class="img">
+                <img src="Images/merch10.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Mental Health Matters Hoodie</b></li>
@@ -143,7 +117,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch11.jpeg" class="img">
+                <img src="Images/merch11.jpeg" class="img">
                 <div class="info">
                     <ul>
                         <li><b>"Stay Here" Original Hoodie</b></li>
@@ -153,7 +127,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch12.jpeg" alt="" class="img">
+                <img src="Images/merch12.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
@@ -163,7 +137,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch13.jpeg" alt="" class="img">
+                <img src="Images/merch13.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>"Dear Person Behind Me" Hoodie</b></li>
@@ -173,7 +147,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch14.jpeg" alt="" class="img">
+                <img src="Images/merch14.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Crewneck</b></li>
@@ -183,7 +157,7 @@ include("DatabaseConnection.php");
                 </div>
             </div>
             <div class="merch">
-                <img src="merch15.jpeg" alt="" class="img">
+                <img src="Images/merch15.jpeg" alt="" class="img">
                 <div class="info">
                     <ul>
                         <li><b>Original Happiness Hoodie</b></li>
