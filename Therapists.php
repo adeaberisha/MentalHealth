@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Therapists</title>
+    <link rel="stylesheet" href="Therapists.css">
+ 
+</head>
+<body>
+    <div class="n">
+        <nav>
+            <div class="logo">
+                <img src="Logo-03-03.png" alt="Website Logo" style="width: 30px; height: 30px; margin-bottom: -5px;">
+                NAVIGATING THE MIND MAZE
+            </div>
+
+            <div class="lista">
+                <ul>
+                    <li><a href="Main.html">Home</a></li>
+                    <li><a href="LearnMore.html">Learn More</a></li>
+                    <li><a href="Therapists.html">Our Therapists</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><img src="PersonLogo" alt="Person Logo" 
+                        style="width: 25px; height: 25px; margin-bottom: -5px;">
+                        <a href="LoginForm.html">Log in</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <header>
+        <div class="foto1">
+            <p style="font-size: xx-large;font-weight: bolder;color: cornsilk;">MEET OUR THERAPISTS</p>
+        </div>
+    </header>
+    
+
+<main>
+    <div class="hyrja">
+        <br>
+        <h1 style="color: rgb(8, 82, 116);margin: 10px; margin-right: 2px;">Get to know us</h1>
+        <p style="color: rgb(92, 90, 90);margin: 10px; margin-right: 2px;">Our therapists provide a supportive and creative space to explore the work of psychotherapy.
+            We work with individuals,couples,families and adolescents.Start the healing process and get more information
+            by choosing one of our therapists below...
+            <br>
+        </p>
+
+        <div class="therapists">
+            <div class="therapist">
+                <img src="image0.jpeg" alt="" class="img" >
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Marcus Carter</b></li>
+                        <li><b>Fee:</b> $200 per session</li>
+                        <li><b>Areas of Focus:</b>Relationship counseling</li>
+                        <li><b>Specialized Skills:</b> Couples Therapy</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image1.jpeg" alt="" class="img" >
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Xavier Rodriguez</b></li>
+                        <li><b>Fee:</b> $150 per session</li>
+                        <li><b>Areas of Focus:</b>Anxiety Management</li>
+                        <li><b>Specialized Skills:</b>Mindfulness Techniques</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image10.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Olivia Richards</b></li>
+                        <li><b>Fee:</b> $180 per session</li>
+                        <li><b>Areas of Focus:</b>Trauma Recovery</li>
+                        <li><b>Specialized Skills:</b>Trauma-Informed</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image11.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Christopher Bennett</b></li>
+                        <li><b>Fee:</b> $130 per session</li>
+                        <li><b>Areas of Focus:</b>Family Dynamics</li>
+                        <li><b>Specialized Skills:</b>Conflict Resolution</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image12.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Gabriel Moreno</b></li>
+                        <li><b>Fee:</b> $170 per session</li>
+                        <li><b>Areas of Focus:</b>Addiction Recovery</li>
+                        <li><b>Specialized Skills:</b>Abuse Counseling</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image13.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Aisha Khan</b></li>
+                        <li><b>Fee:</b> $200 per session</li>
+                        <li><b>Areas of Focus:</b>LGBTQ+ Counseling</li>
+                        <li><b>Specialized Skills:</b>Affirmative Therapy</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image8.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Samuel Foster</b></li>
+                        <li><b>Fee:</b> $140 per session</li>
+                        <li><b>Areas of Focus:</b>Cultural Identity and Issues</li>
+                        <li><b>Specialized Skills:</b>Diversity Awareness</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image14.jpeg" alt="" class="img" >
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Lily Nguyen</b></li>
+                        <li><b>Fee:</b>$125 per session</li>
+                        <li><b>Areas of Focus:</b>Adolescent counseling</li>
+                        <li><b>Specialized Skills:</b>Parent-child therapy</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image15.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Brandon Awadis</b></li>
+                        <li><b>Fee:</b> $180 per session</li>
+                        <li><b>Areas of Focus:</b>ADHD</li>
+                        <li><b>Specialized Skills:</B>ADHD Coaching</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image16.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Alejandro Ramos</b></li>
+                        <li><b>Fee:</b> $175 per session</li>
+                        <li><b>Areas of Focus:</b>Anger Management</li>
+                        <li><b>Specialized Skills:</b>Anger related disorders</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image9.jpeg" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Raj Gupta</b></li>
+                        <li><b>Fee:</b> $145 per session</li>
+                        <li><b>Areas of Focus:</b>Eating disorders</li>
+                        <li><b>Specialized Skills:</b>Nutritional Counseling</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image7.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Emirio White</b></li>
+                        <li><b>Fee:</b> $160 per session</li>
+                        <li><b>Areas of Focus:</b>Insomnia,sleep disorder</li>
+                        <li><b>Specialized Skills:</b>Cognitive Behavioral</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image3.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Jordan Lewis</b></li>
+                        <li><b>Fee:</b> $160 per session</li>
+                        <li><b>Areas of Focus:</b> Self-esteem</li>
+                        <li><b>Specialized Skills:</b>Acceptance and Comitment Therapy</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image4.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.Jimmy Patel</b></li>
+                        <li><b>Fee:</b> $150 per session</li>
+                        <li><b>Areas of Focus:</b>Grief and Loss</li>
+                        <li><b>Specialized Skills:</b>Bereavement Counseling and Patience Therapy</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+            <div class="therapist">
+                <img src="image6.jpeg" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b>Dr.John Garcia</b></li>
+                        <li><b>Fee:</b>$120 per session</li>
+                        <li><b>Areas of Focus:</b>Career Counseling</li>
+                        <li><b>Specialized Skills:</b>Goal Setting and Self-Confidence</li>
+                    </ul>
+                    <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <footer>
+            <div class="container">
+                    <div class="tekst">
+                        <h3 style="color: black;font-size: x-large;">NAVIGATING THE MIND MAZE</h3>
+                        <p>Embark on a journey through the labyrinth of the mind with us at Navigating the Mind Maze. 
+                            Your compass to mental well-being, offering insights, support, and resources to navigate the intricate paths
+                            of mental health. 
+                            Together, let's navigate the maze and discover the strength within.
+                            Learn more about us <a href="ContactUs.html" style="color: rgb(64, 63, 63); text-decoration: none;">by clicking here</a>.</p>
+                    </div>
+                <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
+            </div>
+        </footer>
+    </div>
+
+</main>
+
+</body>
+</html>
