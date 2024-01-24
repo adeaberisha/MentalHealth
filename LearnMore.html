@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MentalHealth.css">
-    <title>Document</title>
+    <title>Learn More</title>
     <link rel="stylesheet" href="LearnMore.css">
 </head>
 <body>
@@ -27,6 +26,9 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
         </nav>
     </div>
 
@@ -34,15 +36,7 @@
     <br>
 
     <div class="opening">
-        <img class="Color1"src="Color-03.png" alt="Color">
-        <img class="Photo"src="Mental Illness.jpg" alt="Mental Illness">
-        <img class="Color2"src="Color-03.png" alt="Color">
-    </div>
-
-    <div class="openingtext">
-        <h1>
-            We shed light on the intricate landscape of mental health, offering insights and support for a journey towards well-being.
-        </h1>
+        <img class="Photo"src="Mental Illness-06.jpg" alt="Mental Illness">
     </div>
 
     <div class="belownav">
@@ -113,11 +107,10 @@
          </div>
 
          <hr>
-
             <div class="container2">
+                
+                
                 <div class="subtitle">
-                        <img src="I think you should talk to someone-01.png" alt="I think" style="height: 400px; width: 420px; margin-right: 60px;
-                        margin-top: 40px; float: right; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> 
                         <h1>When to see a doctor</h1>
                 </div>
 
@@ -128,8 +121,10 @@
                         </p>
                 </div>
 
+                <img src="I think you should talk to someone-01.png" alt="I think"> 
+
                 <div class="subtitle">
-                        <h1>Supporting a family member or friend</h1>
+                        <h1>Supporting a loved one</h1>
                 </div>
 
                 <div class="teksti">
@@ -163,7 +158,8 @@
                             with external life circumstances acting as potential triggers.
                         </li>
                         <li>
-                            <span><b>Environmental exposures before birth:</b></span>Factors such as exposure to stressors, 
+                            <span><b>Environmental exposures before birth:</b></span>
+                            Factors such as exposure to stressors, 
                             inflammatory conditions, toxins, or substances like alcohol and drugs during fetal development 
                             can sometimes be associated with the onset of mental illnesses.
                         </li>
@@ -222,7 +218,7 @@
                 <h1 class="t">&rarr; &nbsp;<a href="Main.html#recs">Recommendations</a></h1>
             </div>
     
-    </div>
+        </div>
 
     <div class="footer">
         <footer>
@@ -239,6 +235,22 @@
                 <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
         </footer>
     </div>
+
+    <script>
+        /*RESPONSIVITETI I NAVBAR*/
+        function toggleMenu() {
+            const lista = document.querySelector('.lista ul');
+            lista.classList.toggle('show');
+        }
+
+        // Per mbylljen e menuse kur nje element i menuse preket
+        document.querySelectorAll('.lista ul li a').forEach(item => {
+        item.addEventListener('click', () => {
+            const lista = document.querySelector('.lista ul');
+            lista.classList.remove('show');
+        });
+        });
+    </script>
 
 
 </body>

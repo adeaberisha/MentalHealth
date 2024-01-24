@@ -8,6 +8,8 @@ body{
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
 }
+
+/*NAVIGATION BAR*/
 .n{
     background: white;
     border-style: groove;
@@ -19,7 +21,6 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 nav .lista{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -46,36 +47,93 @@ nav .logo{
     font-family: 'Times New Roman', Times, serif;
     font-size: 27px;
     font-weight: bolder;
+} 
+.hamburger-menu{
+    line-height: 80px;
+    font-size: 27px;
+    margin-right: 10px;
 }
+
+/*RESPONSIVITETI I NAVIGATION BAR*/
+@media screen and (max-width: 901px) {
+
+    .lista ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+    }
+
+    .lista ul.show {
+        display: flex;
+    }
+
+    .lista ul li {
+        margin: 10px;
+        text-align: center;
+    }
+
+} 
+ 
+@media screen and (max-width: 407px) {
+
+    .hamburger-menu{
+        font-size: 18px;
+    }
+
+ } 
+
+@media screen and (max-width: 931px) {
+
+    nav .logo{
+    font-size: 18px;
+    }
+
+} 
+
+@media screen and (min-width: 901px) {
+
+    .hamburger-menu {
+        display: none;
+    }
+
+}
+
+
+/*==========================*/
+
+
 .container{
     display: flex;
     flex-direction: column;
 }
-.container2{
-    display: inline;
-    justify-content: space-evenly;
+.container2 img{
+    height: 400px; 
+    width: 420px; 
+    margin-left: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .container3 p{
-    margin-right: 200px;
+    margin-right: 50px;
 }
 .container3 ul{
-    margin-right: 450px;
+    margin-right: 220px; 
 }
 .title{
     background: linear-gradient(#66a5ad,#c4d7e6, #66a5ad);
     height: 150px;
-    width: 100%;
-    font-size: 20px;
+    font-size: 22px;
     margin-top: 40px;
 }
 .t{
     margin-left: 50px;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px;
 }
 .subtitle{
-    margin-left: 120px;
+    margin-left: 120px; 
 }
 .subtitle h1{
     margin-top: 50px;
@@ -86,8 +144,8 @@ nav .logo{
 }
 .teksti p{
     margin-top: 20px;
-    margin-left: 120px;
-    margin-right: 500px;
+    margin-left: 120px; 
+    margin-right: 200px; 
     font-size: 25px;
 }
 .teksti ul{
@@ -110,8 +168,8 @@ nav .logo{
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: 120px;
-    margin-bottom: 50px;
+    margin-left: 120px; 
+    margin-bottom: 50px; 
 }
 .b:hover{
     background: #df520b;
@@ -120,25 +178,7 @@ nav .logo{
     display: flex;
 }
 .opening .Photo{
-    align-self: center;
-    height: 300px;
-    width: 600px;
-}
-.opening .Color1{
-    align-self: flex-start;
-    height: 300px;
     width: 100%;
-}
-.opening .Color2{
-    align-self: flex-end;
-    height: 300px;
-    width: 100%;
-}
-.openingtext{
-    background: #bed8dc;
-    height: 50px;
-    text-align: center;
-    font-size: 12px;
 }
 hr{
     margin-left: 20px; 
@@ -155,11 +195,8 @@ hr{
 .end{
     background: linear-gradient(#66a5ad,#c4d7e6, #66a5ad);
     border-radius: 15px;
-    margin-left: 120px;
-    margin-right: 450px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    height: 150px;
+    margin: 20px;
+    padding: 10px;
     font-size: 20px;
 }
 .footer {
@@ -172,14 +209,90 @@ hr{
     margin-bottom:12px;
     font-weight:bold;
     font-size:16px;
+} 
+
+/*RESPONSIVITETI*/
+@media screen and (max-width: 799px){
+    .container2 img{
+        height: 180px;
+        width: 200px;
+        margin-top: none;
+        margin-left: 40px;
+    } 
+    .container3 p{
+        margin-right: 20px;
+    }
+    .container3 ul{
+        margin-right: 20px;
+    }
+    .b{
+        padding: 10px 17px;
+        font-size: 12px;
+        margin-left: 40px; 
+        margin-bottom: 50px; 
+    }
+    .title{
+        height: 75px;
+        font-size: 11px; 
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+    .t{
+        margin-left: 15px;
+        padding: 20px;
+    }
+    .subtitle{
+        margin-left: 20px;
+        padding-left: 20px;
+    }
+    .subtitle h1{
+        font-size: 18px;
+    }
+    .teksti p{
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+    }
+    .teksti ul{
+        margin-left: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 15px;
+    }
+    .openingtext{
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 6px; 
+    }
+
+    .end{
+        padding-right: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: none;
+        margin-left: none;
+        font-size: 20px;
+        overflow: hidden;
+    }
+    .end h1{
+        font-size: 22px;
+        margin-right: none;
+    }
 }
-.tekst{
-    margin-left: 10px;
+@media screen and (min-width: 1000px){
+    .teksti p{
+        margin-right: 500px;
+    }
+    .container3 ul{
+        margin-right: 500px;
+    }
 }
-.footer .copyright {
-    text-align:center;
-    padding-top:24px;
-    font-size:13px;
-    color: rgb(64, 63, 63);
-    margin-bottom:0;
-}
+
+
+
+
