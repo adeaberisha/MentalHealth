@@ -2,15 +2,15 @@
 include("DatabaseConnection.php");
 include("navbar.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html> -->
+<!-- <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
   <link rel="stylesheet" href="Main.css">
   
-</head>
+</head> -->
 <body>
     <div id="kontenti">
         <header>
@@ -60,7 +60,7 @@ include("navbar.php");
     </div>
     <div class="therapists">
         <div class="therapist">
-            <img src="image13.jpeg" alt="" class="img">
+            <img src="Images/image13.jpeg" alt="" class="img">
             <div class="info">
                 <ul>
                     <li><b>Dr.Aisha Khan</b></li>
@@ -70,7 +70,7 @@ include("navbar.php");
             </div>
         </div>
         <div class="therapist">
-            <img src="image8.jpeg" alt="" class="img">
+            <img src="Images/image8.jpeg" alt="" class="img">
             <div class="info">
                 <ul>
                     <li><b>Dr.Samuel Foster</b></li>
@@ -80,7 +80,7 @@ include("navbar.php");
             </div>
         </div>
         <div class="therapist">
-            <img src="image14.jpeg" alt="" class="img" >
+            <img src="Images/image14.jpeg" alt="" class="img" >
             <div class="info">
                 <ul>
                     <li><b>Dr.Lily Nguyen</b></li>
@@ -107,8 +107,8 @@ include("navbar.php");
         <div class="slider-container">
             <button class="prev-button" onclick="changeSlide(-1)"></button>
                 <div class="slider">
-                    <img src="Books-1-02.jpg" alt="Image 1" class="slide">
-                    <img src="Books-2-02.jpg" alt="Image 2" class="slide">
+                    <img src="Images/Books-1-02.jpg" alt="Image 1" class="slide">
+                    <img src="Images/Books-2-02.jpg" alt="Image 2" class="slide">
                 </div>
             <button class="next-button" onclick="changeSlide(1)"></button>
         </div>
@@ -126,17 +126,17 @@ include("navbar.php");
 
             <div class="first">
                 <h2 style="color: #708ecc;">BUILD CONFIDENCE</h2>
-                <img src="R1.PNG" alt="R1">
+                <img src="Images/R1.PNG" alt="R1">
             </div>
 
             <div class="second">
                 <h2 style="color: #14945d">FEEL CONNECTED</h2>
-                <img src="R2.PNG" alt="R2">
+                <img src="Images/R2.PNG" alt="R2">
             </div>
 
             <div class="third">
                 <h2 style="color: #56d2d4;">STAY FOCUSED</h2>
-                <img src="R3.png" alt="R3">
+                <img src="Images/R3.png" alt="R3">
             </div>
 
         </div>
@@ -146,17 +146,17 @@ include("navbar.php");
 
             <div class="first">
                 <h2 style="color: #fa8ea3;">SHARPEN YOUR MIND</h2>
-                <img src="R4.png" alt="R4">
+                <img src="Images/R4.png" alt="R4">
             </div>
 
             <div class="second">
                 <h2 style="color: #f5c055;">BE HEALTHIER</h2>
-                <img src="R5.png" alt="R5">
+                <img src="Images/R5.png" alt="R5">
             </div>
 
             <div class="third">
                 <h2 style="color: #ee5645;">TAKE A BREAK</h2>
-                <img src="R6.png" alt="R6">
+                <img src="Images/R6.png" alt="R6">
             </div>
            
         </div>
@@ -168,7 +168,7 @@ include("navbar.php");
     </div>
     <div class="merchendise">
         <div class="merch">
-            <img src="merch5.jpeg" alt="" class="img">
+            <img src="Images/merch5.jpeg" alt="" class="img">
             <div class="info">
                 <ul>
                     <li><b>Nick Portrait Project Hoodie</b></li>
@@ -177,7 +177,7 @@ include("navbar.php");
             </div>
         </div>
         <div class="merch">
-            <img src="merch6.jpeg" alt="" class="img">
+            <img src="Images/merch6.jpeg" alt="" class="img">
             <div class="info">
                 <ul>
                     <li><b>Original Happiness Hoodie</b></li>
@@ -186,7 +186,7 @@ include("navbar.php");
             </div>
         </div>
         <div class="merch">
-            <img src="merch7.jpeg" alt="" class="img">
+            <img src="Images/merch7.jpeg" alt="" class="img">
             <div class="info">
                 <ul>
                     <li><b>"Not The Answer" Hoodie</b></li>
@@ -219,4 +219,4 @@ include("navbar.php");
         </footer>
     </div>
 </body>
-</html>
+<!-- </html> -->

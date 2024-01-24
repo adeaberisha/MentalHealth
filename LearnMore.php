@@ -1,12 +1,12 @@
-<?php include("navbar.php")?>
-<!DOCTYPE html>
+<?php include("navbar.php");?>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn More</title>
     <link rel="stylesheet" href="LearnMore.css">
-</head>
+</head> -->
 <body>
     <br>
     <br>
@@ -212,5 +212,5 @@
         </footer>
     </div>
 </body>
-</html>
+<!-- </html> -->
 

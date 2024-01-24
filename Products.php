@@ -3,7 +3,7 @@ include("DatabaseConnection.php");
 include("navbar.php");
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@ include("navbar.php");
     <title>Products</title>
     <link rel="stylesheet" href="Products.css">
  
-</head>
+</head> -->
 <body>
 <main>
     <div class="hyrja">
@@ -188,4 +188,4 @@ include("navbar.php");
 </main>
 
 </body>
-</html>
+<!-- </html> -->
