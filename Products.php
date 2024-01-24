@@ -1,3 +1,7 @@
+<?php 
+include("DatabaseConnection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
