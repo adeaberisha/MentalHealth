@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigating the Mind Maze</title>
-    <link rel="stylesheet" href="Navbar.css">
-    <link rel="stylesheet" href="Main.css">
-    <link rel="stylesheet" href="Products.css">
-    <link rel="stylesheet" href="LearnMore.css">
-
+    <link rel="stylesheet" href="./Styles/Navbar.css">
+    
     <script src="JavaScript.js" defer></script>
+   
+
 </head>
+
 <body>
     <div class="n">
         <nav>
@@ -39,4 +38,4 @@
     </div>
     
 </body>
-
+</html>

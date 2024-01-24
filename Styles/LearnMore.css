@@ -1,0 +1,189 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container2 img{
+    height: 400px; 
+    width: 420px; 
+    margin-left: 120px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container3 p{
+    margin-right: 50px;
+}
+.container3 ul{
+    margin-right: 220px; 
+}
+.title{
+    background: linear-gradient(#66a5ad,#c4d7e6, #66a5ad);
+    height: 150px;
+    font-size: 22px;
+    margin-top: 40px;
+}
+.t{
+    margin-left: 50px;
+    padding: 50px;
+}
+.subtitle{
+    margin-left: 120px; 
+}
+.subtitle h1{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.teksti{
+    margin-bottom: 50px;
+}
+.teksti p{
+    margin-top: 20px;
+    margin-left: 120px; 
+    margin-right: 200px; 
+    font-size: 25px;
+}
+.teksti ul{
+    display: block;
+    list-style-type: disc;
+    margin-left: 120px;
+    padding-left: 40px;
+    font-size: 25px;
+}
+.teksti ul li{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.b{
+    background: #66a5ad;
+    color: black;
+    padding: 20px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 120px; 
+    margin-bottom: 50px; 
+}
+.b:hover{
+    background: #df520b;
+}
+.opening{
+    display: flex;
+}
+.opening .Photo{
+    width: 100%;
+}
+hr{
+    margin-left: 20px; 
+    margin-right: 20px;
+}
+.t a{
+    color: black;
+}
+.t a:hover{
+    color: gray;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+.end{
+    background: linear-gradient(#66a5ad,#c4d7e6, #66a5ad);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*RESPONSIVITETI*/
+@media screen and (max-width: 799px){
+    .container2 img{
+        height: 180px;
+        width: 200px;
+        margin-top: none;
+        margin-left: 40px;
+    } 
+    .container3 p{
+        margin-right: 20px;
+    }
+    .container3 ul{
+        margin-right: 20px;
+    }
+    .b{
+        padding: 10px 17px;
+        font-size: 12px;
+        margin-left: 40px; 
+        margin-bottom: 50px; 
+    }
+    .title{
+        height: 75px;
+        font-size: 11px; 
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+    .t{
+        margin-left: 15px;
+        padding: 20px;
+    }
+    .subtitle{
+        margin-left: 20px;
+        padding-left: 20px;
+    }
+    .subtitle h1{
+        font-size: 18px;
+    }
+    .teksti p{
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 15px;
+    }
+    .teksti ul{
+        margin-left: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 15px;
+    }
+    .openingtext{
+        padding-top: 5px;
+        padding-bottom: 15px;
+        font-size: 6px; 
+    }
+
+    .end{
+        padding-right: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: none;
+        margin-left: none;
+        font-size: 20px;
+        overflow: hidden;
+    }
+    .end h1{
+        font-size: 22px;
+        margin-right: none;
+    }
+}
+@media screen and (min-width: 1000px){
+    .teksti p{
+        margin-right: 500px;
+    }
+    .container3 ul{
+        margin-right: 500px;
+    }
+}
+
+
+
+

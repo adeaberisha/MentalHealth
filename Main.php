@@ -2,15 +2,15 @@
 include("DatabaseConnection.php");
 include("navbar.php");
 ?>
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main</title>
-  <link rel="stylesheet" href="Main.css">
-  
-</head> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health</title>
+    <link rel="stylesheet" href="./Styles/Main.css">
+    
+
 <body>
     <div id="kontenti">
         <header>
@@ -199,24 +199,8 @@ include("navbar.php");
         <button class="getbutton"><a href="Products.html">SHOP OUR BEST SELLERS</a></button>
     </div>
 
-    <div class="footer">
-        <footer>
-            <div class="container">
-
-                <div class="tekst">
-                    <h3 style="color: black;font-size: x-large;">NAVIGATING THE MIND MAZE</h3>
-                    <p>Embark on a journey through the labyrinth of the mind with us at Navigating the Mind Maze. 
-                        Your compass to mental well-being, offering insights, support, and resources to navigate the intricate paths
-                        of mental health. 
-                        Together, let's navigate the maze and discover the strength within.
-                        Learn more about us <a href="ContactUs.html" style="color: rgb(64, 63, 63);">by clicking here</a>.
-                    </p>
-
-                </div>
-                <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
-
-            </div>
-        </footer>
-    </div>
 </body>
-<!-- </html> -->
+</html>
+<?php
+include("footer.php");
+?>

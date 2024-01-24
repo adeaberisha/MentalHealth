@@ -1,0 +1,507 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*SLIDER I PARE*/
+#slideshow{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/*==========================*/
+
+/*SLIDER ME LIBRA*/
+.slider-container{
+    overflow: hidden;
+    position: relative;
+    width: 65%;
+    margin-top: 48px;
+}
+.slider{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide{
+    width: 100%;
+    flex: 0 0 auto;
+}
+.prev-button,
+.next-button{
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 10px;
+    background-color: #66a5ad;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+.prev-button{
+    left: 15px;
+}
+.next-button{
+    right: 15px;
+}
+
+/*RESPONSIVITETI I SLIDERIT ME LIBRA*/
+@media (max-width: 768px){
+    .prev-button,.next-button{
+        padding: 5px;
+        top: 40%;
+        transform: translateY(40%);
+    } 
+    .prev-button{
+        left: -5px;
+    }
+    .next-button{
+        right: -5px;
+    } 
+}
+@media (min-width: 768px){
+    .prev-button{
+        left: -10px;
+    }
+    .next-button{
+        right: -10px;
+    } 
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*==========================*/
+
+/*PARAGRAFAT PER PERSHKRIM TE BOOKS*/
+.title-container{
+    text-align: center;
+}
+
+.title-container h1{
+    text-align: center;
+    border-radius: 15px;
+    background: #ae98e4;
+    padding: 15px 25px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+.paragraphs{
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*==========================*/
+
+/*PARAGRAFAT PERFUNDI SLIDER TE PARE*/
+.permbajtja{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+}
+.majtas{
+    flex: 1;
+    margin: 10px;
+}
+.qender1{
+    flex: 1;
+    margin: 10px;
+}
+.qender2{
+    flex: 1;
+    margin: 10px;
+}
+.djathtas{
+    flex: 1;
+    margin: 10px;
+}
+.fundi{
+    margin-left: 80px;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+.p1{
+    flex: 1;
+    margin: 10px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+.p2{
+    flex: 1;
+    margin: 10px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+.p3{
+    flex: 1;
+    margin: 10px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+.p4{
+    flex: 1;
+    margin: 10px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+
+/*==========================================*/
+
+/*RESPONSIVITETI I PJESES PERFUNDI SLIDER TE PARE*/
+@media screen and (max-width: 660px) {
+
+    .title-container {
+        padding: 20px;
+    }
+    
+    .title-container h1 {
+        border-radius: 15px;
+        background: #ae98e4;
+        padding: 10px;
+        margin: 10px;
+        font-size: 22px;
+    }
+    
+    .paragraphs {
+        margin-top: 50px;
+        margin-bottom: -30px;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .paragraphs div {
+        margin-bottom: 15px;
+    } 
+
+    .permbajtja {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Times New Roman', Times, serif;
+        margin: 10px;
+    }
+    
+    .p1,
+    .p2,
+    .p3,
+    .p4 {
+        font-size: 16px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-style: italic;
+        margin-bottom: 15px;
+    }
+    
+    .majtas,
+    .qender1,
+    .qender2,
+    .djathtas {
+        margin-bottom: 15px;
+    }
+    /*PODCASTS*/
+    .podcast-container img{
+        margin-top: 50px auto;
+        display: block;
+        margin-top: -50px;
+        margin-left: 55px;
+        max-width: 80%;
+    }
+    .fundi {
+        text-align: center;
+        margin: 20px; /* margjinat per phones*/
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+    }
+
+}
+
+/*==========================================*/
+
+/*PJESA ME ROUTINE*/
+.routine{
+    text-align: center;
+    margin-top: 70px; 
+}
+.routine img{
+    margin: 50px;
+    width: 300px; 
+    height: auto;
+}
+
+.routine .teksti h2{
+    font-size: 24px;
+}
+
+.routine .teksti{
+    margin-bottom: 100px;
+}
+
+.routine .firstthree,
+.routine .secondthree{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+
+/*RESPONSIVITETI I PJESES ME ROUTINE*/
+@media only screen and (max-width: 900px){
+    .routine img{
+        width: 150px;
+    }
+    .routine h2{
+        font-size: 18px;
+    }
+    .routine .teksti h2{
+        font-size: 20px;
+    }
+    .routine h1{
+        font-size: 25px;
+    }
+}
+/*CSS DHE MEDIA-SCREEN PER THERAPISTS*/
+.therapy {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 80px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.txt{
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(92, 90, 90);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.therapists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.therapist{
+    width: 23%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    border: 1px solid rgb(80, 0, 121); /* Add a border */
+    border-radius: 10px; /* Add rounded corners to the border */
+    overflow: hidden; /* Ensure the border doesn't overlap the rounded corners of the image */
+    padding: 10px;
+
+}
+.img{
+    width: 220px;
+    height: 250px;
+    border-radius: 8px;
+}
+.therapist:hover .img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* vendos nje hije */
+}
+.info{
+    margin-top: 10px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.getbutton {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(122, 103, 145), rgb(214, 202, 224));
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px; 
+    cursor: pointer;
+    margin: 10px;
+    border: none; 
+    transition: background 0.3s ease; 
+}
+
+.getbutton:hover {
+    background: linear-gradient(to right, rgb(122, 103, 145), rgb(214, 202, 224));
+}
+
+.getbutton a {
+    color: rgb(3, 0, 0);
+    text-decoration: none;
+}
+
+.visit-therapy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+@media only screen and (Max-width: 660px){
+    .therapists {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .therapist {
+        width: 100%; /* width full per screens me te vogla */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    .img {
+        width: 100%; /* width full per screens me te vogla */
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .therapist:hover .img {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .info {
+        margin-top: 10px;
+        text-align: center; /*ne qender e vendosur per telefona*/
+    }
+}
+
+/*CSS DHE MEDIA SCREEN BEST-SELLER*/
+.bestsellers {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.merchendise{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.merch{
+    width: 23%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    border: 1px solid rgb(80, 0, 121); /* Add a border */
+    border-radius: 10px; /* Add rounded corners to the border */
+    overflow: hidden; /* Ensure the border doesn't overlap the rounded corners of the image */
+    padding: 10px;
+
+}
+.img{
+    width: 220px;
+    height: 250px;
+    border-radius: 8px;
+}
+.merch:hover .img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* vendos nje hije */
+}
+.info{
+    margin-top: 10px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+.getbutton {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(122, 103, 145), rgb(214, 202, 224));
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px; 
+    cursor: pointer;
+    margin: 10px;
+    border: none; 
+    transition: background 0.3s ease; 
+}
+
+.getbutton:hover {
+    background: linear-gradient(to right, rgb(122, 103, 145), rgb(214, 202, 224));
+}
+
+.getbutton a {
+    color: rgb(3, 0, 0);
+    text-decoration: none;
+}
+
+.visit-bestsellers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+@media only screen and (Max-width: 660px){
+    .merchendise {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .merch {
+        width: 100%; /* width full per screens me te vogla */
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    .img {
+        width: 100%; /* width full per screens me te vogla */
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .merch:hover .img {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .info {
+        margin-top: 10px;
+        text-align: center; /*ne qender e vendosur per telefona*/
+    }
+}
+
+
+
+    
+ 

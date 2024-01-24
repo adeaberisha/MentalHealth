@@ -1,12 +1,15 @@
 <?php include("navbar.php");?>
-<!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn More</title>
-    <link rel="stylesheet" href="LearnMore.css">
-</head> -->
+    <title>LearnMore</title>
+    <link rel="stylesheet" href="./Styles/LearnMore.css">
+   
+</head>
+
 <body>
     <br>
     <br>
@@ -195,22 +198,9 @@
             </div>
     
         </div>
-
-    <div class="footer">
-        <footer>
-            <div class="container">
-                    <div class="tekst">
-                        <h3 style="color: black;font-size: x-large;">NAVIGATING THE MIND MAZE</h3>
-                        <p>Embark on a journey through the labyrinth of the mind with us at Navigating the Mind Maze. 
-                            Your compass to mental well-being, offering insights, support, and resources to navigate the intricate paths
-                            of mental health. 
-                            Together, let's navigate the maze and discover the strength within.
-                            Learn more about us <a href="ContactUs.html" style="color: rgb(64, 63, 63); text-decoration: none;">by clicking here</a>.</p>
-                    </div>
-            </div>
-                <p class="copyright" style="color: rgb(64, 63, 63);">Navigating The Mind Maze © 2018</p>
-        </footer>
-    </div>
 </body>
-<!-- </html> -->
+</html>
+<?php
+include("footer.php");
+?>
 
