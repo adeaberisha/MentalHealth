@@ -15,7 +15,7 @@
     <br>
 
     <div class="opening">
-        <img class="Photo"src="Images/Mental Illness-06.jpg" alt="Mental Illness">
+        <img class="Photo"src="Images/Mental Illness-02.png" alt="Mental Illness">
     </div>
 
     <div class="belownav">
@@ -194,7 +194,7 @@
             <hr>
 
             <div class="end">
-                <h1 class="t">&rarr; &nbsp;<a href="Main.html#recs">Recommendations</a></h1>
+                <h1 class="t">&rarr; &nbsp;<a href="Main.php#recs">Recommendations</a></h1>
             </div>
     
         </div>

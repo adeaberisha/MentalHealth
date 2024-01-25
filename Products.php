@@ -23,7 +23,7 @@ include("navbar.php");
                         <li><b>Original Happiness Hoodie</b></li>
                         <li><b>$70</b></li>
                     </ul>
-                    <button class="getbutton"><a href="LoginForm.html">Get Yours</a></button>
+                    <button class="getbutton"><a href="ContactUs.php">Get Yours</a></button>
                 </div>
             </div>
             <div class="merch">
