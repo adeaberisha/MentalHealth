@@ -98,11 +98,12 @@ p{
         height: 280px;
         width: 100%;
         background-size: cover; /* e zvogeluar si cover per telefona */
-        background-image: url(foto1.jpeg);
+        background-image: url("../Images/foto1.jpeg");
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 20px; 
+        height: auto;
     }
 
     h1 {
