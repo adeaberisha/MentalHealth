@@ -1,3 +1,44 @@
+<?php
+include("userRepository.php");
+include("DatabaseConnection.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = htmlspecialchars($_POST['email']);
+    $password = htmlspecialchars($_POST['password']);
+    $confirmPassword = htmlspecialchars($_POST['confirmPassword']);
+
+    if (empty($email) || empty($password) || empty($confirmPassword)) {
+        echo "All fields are required.";
+    } else {
+
+        if ($password !== $confirmPassword) {
+            echo "Passwords do not match.";
+        } else {
+
+            $dbConnection = DatabaseConnection::getInstance();
+            $conn = $dbConnection->getConnection();
+
+            $user = new User($conn);
+
+            if ($user->isEmailTaken($email)) {
+                echo "Email already exists. Please choose a different one.";
+            } else {
+
+                if ($user->register($email, $password)) {
+                    header("Location: login.php");
+                } else {
+                    echo "Error during registration.";
+                }
+            }
+
+            $dbConnection->closeConnection();
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +51,7 @@
 <body>
     <div class="container">
         <header>SIGN UP</header>
-        <form action="https://www.codinglabweb.com/">
+        <form>
         <div class="field email-field">
             <div class="input-field">
                 <input type="email" placeholder="Enter your email" class="email" />
