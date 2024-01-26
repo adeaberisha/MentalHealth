@@ -1,13 +1,18 @@
 <?php 
 include("DatabaseConnection.php");
 include("navbar.php");
-
 include_once("ProductRepository.php");
+include("TherapistRepository.php");
 
 $productRepository = new ProductRepository();
 // $threeProducts = $productRepository->getThreeProducts();
 $productIds = [5,6,7];
-$products = $productRepository->getProductsByIds($productIds)
+$products = $productRepository->getProductsByIds($productIds);
+
+$therapistRepository = new TherapistRepository();
+// $threeProducts = $therapistRepository->getThreeProducts();
+$therapistIds = [6,7,8];
+$therapists = $therapistRepository->getTherapistsByIds($therapistIds);
 
 ?>
 <!DOCTYPE html>
@@ -67,36 +72,18 @@ $products = $productRepository->getProductsByIds($productIds)
             our newest members who bring a wealth of expertise and passion for mental health and well-being.</p>
     </div>
     <div class="therapists">
-        <div class="therapist">
-            <img src="Images/image13.jpeg" alt="" class="img">
-            <div class="info">
-                <ul>
-                    <li><b>Dr.Aisha Khan</b></li>
-                    <li><b>Areas of Focus:</b>LGBTQ+ Counseling</li>
-                    <li><b>Specialized Skills:</b>Affirmative Therapy</li>
-                </ul>
+        <?php foreach($therapists as $therapist):?>
+            <div class="therapist">
+                <img src="<?= $therapist['image_url']; ?>" alt="" class="img">
+                    <div class="info">
+                        <ul>
+                            <li><b><?= $therapist['name']; ?></b></li>
+                            <li><b>Areas of Focus:</b><?= $therapist['areas_of_focus']; ?></li>
+                            <li><b>Specialized Skills:</b><?= $therapist['specialized_skills']; ?></li>
+                        </ul>
+                    </div>
             </div>
-        </div>
-        <div class="therapist">
-            <img src="Images/image8.jpeg" alt="" class="img">
-            <div class="info">
-                <ul>
-                    <li><b>Dr.Samuel Foster</b></li>
-                    <li><b>Areas of Focus:</b>Cultural Identity and Issues</li>
-                    <li><b>Specialized Skills:</b>Diversity Awareness</li>
-                </ul>
-            </div>
-        </div>
-        <div class="therapist">
-            <img src="Images/image14.jpeg" alt="" class="img" >
-            <div class="info">
-                <ul>
-                    <li><b>Dr.Lily Nguyen</b></li>
-                    <li><b>Areas of Focus:</b>Adolescent counseling</li>
-                    <li><b>Specialized Skills:</b>Parent-child therapy</li>
-                </ul>
-            </div>
-        </div>
+        <?php endforeach; ?> 
     </div>
     <div class="visit-therapy">
         <button class="getbutton"><a href="Therapists.php">Our Therapists</a></button>
