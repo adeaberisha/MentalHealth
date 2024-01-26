@@ -11,11 +11,8 @@
 </head>
 
 <body>
-    <br>
-    <br>
-
     <div class="opening">
-        <img class="Photo"src="Images/Mental Illness-02.png" alt="Mental Illness">
+        <img class="Photo"src="Images/Mental Illness-02-02.png" alt="Mental Illness">
     </div>
 
     <div class="belownav">

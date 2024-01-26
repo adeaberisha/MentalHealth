@@ -1,6 +1,14 @@
 <?php 
 include("DatabaseConnection.php");
 include("navbar.php");
+
+include_once("ProductRepository.php");
+
+$productRepository = new ProductRepository();
+// $threeProducts = $productRepository->getThreeProducts();
+$productIds = [5,6,7];
+$products = $productRepository->getProductsByIds($productIds)
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +99,7 @@ include("navbar.php");
         </div>
     </div>
     <div class="visit-therapy">
-        <button class="getbutton"><a href="Therapists.html">Our Therapists</a></button>
+        <button class="getbutton"><a href="Therapists.php">Our Therapists</a></button>
     </div>
 
     <div class="title-container" id="recs">
@@ -167,36 +175,21 @@ include("navbar.php");
         <h2>SHOP OUR BEST SELLERS</h2>
     </div>
     <div class="merchendise">
-        <div class="merch">
-            <img src="Images/merch5.jpeg" alt="" class="img">
-            <div class="info">
-                <ul>
-                    <li><b>Nick Portrait Project Hoodie</b></li>
-                    <li><b>$80</b></li>
-                </ul>
+        <?php foreach($products as $product):?>
+            <div class="merch">
+                <img src="<?= $product['image_path']?>" alt="" class="img">
+                <div class="info">
+                    <ul>
+                        <li><b><?= $product['name']?></b></li>
+                        <li><b><?= $product['price']?></b></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="merch">
-            <img src="Images/merch6.jpeg" alt="" class="img">
-            <div class="info">
-                <ul>
-                    <li><b>Original Happiness Hoodie</b></li>
-                    <li><b>$70</b></li>
-                </ul>
-            </div>
-        </div>
-        <div class="merch">
-            <img src="Images/merch7.jpeg" alt="" class="img">
-            <div class="info">
-                <ul>
-                    <li><b>"Not The Answer" Hoodie</b></li>
-                    <li><b>$75</b></li>
-                </ul>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
+    
     <div class="visit-bestsellers">
-        <button class="getbutton"><a href="Products.html">SHOP OUR BEST SELLERS</a></button>
+        <button class="getbutton"><a href="Products.php">SHOP OUR BEST SELLERS</a></button>
     </div>
 
 </body>
