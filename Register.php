@@ -1,6 +1,6 @@
 <?php
 include("userRepository.php");
-include("DatabaseConnection.php");
+include_once("DatabaseConnection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -16,10 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Passwords do not match.";
         } else {
 
-            $dbConnection = DatabaseConnection::getInstance();
-            $conn = $dbConnection->getConnection();
+            $dbConnection = new DatabaseConnection();
+            $conn = $dbConnection->startConnection();
 
-            $user = new User($conn);
+            $user = new userRepository($conn);
 
             if ($user->isEmailTaken($email)) {
                 echo "Email already exists. Please choose a different one.";
@@ -31,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "Error during registration.";
                 }
             }
-
-            $dbConnection->closeConnection();
         }
     }
 }

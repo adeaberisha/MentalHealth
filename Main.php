@@ -23,7 +23,7 @@ $therapists = $therapistRepository->getTherapistsByIds($therapistIds);
     <title>Mental Health</title>
     <link rel="stylesheet" href="./Styles/Main.css">
     
-
+    <script src="JavaScript.js" defer></script>
 <body>
     <div id="kontenti">
         <header>

@@ -28,6 +28,9 @@ nav .lista ul li a{
 nav .lista ul li a:hover{
     color: #66a5ad;
 }
+.lista ul li.logout a {
+    color: #ff0000;
+}
 nav .logo{
     align-items: center;
     line-height: 80px;
@@ -76,7 +79,7 @@ nav .logo{
 
  } 
 
-@media screen and (max-width: 993px) {
+@media screen and (max-width: 1000px) {
 
     nav .logo{
     font-size: 18px;

@@ -1,7 +1,9 @@
 <?php
 include("DatabaseConnection.php");
 
-class User{
+session_start();
+
+class userRepository{
     private $db;
 
     public function __construct($db){

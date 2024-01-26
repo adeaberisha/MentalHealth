@@ -1,3 +1,28 @@
+<?php
+include("userRepository.php");
+include_once("DatabaseConnection.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //per mi dergu te dhenat e formes ne server e shikojme a eshte perdor POST method
+    $username = htmlspecialchars($_POST['email']); //me e marr te dhenen e futur te username
+    $password = htmlspecialchars($_POST['password']); //me e marr te dhenen e futur te password
+
+    //_POST eshte variabel superglobale qe mban te dhena qe jane dergu ne server permes HTTP POST
+    //htmlspecialchars perdoret per konvertim te karaktereve speciale ne HTML entities, per me parandalu cross-site scripting attacks
+
+    $dbConnection = DatabaseConnection();
+    $conn = $dbConnection->startConnection(); //startConnection() e kthen database connection
+
+    $user = new userRepository($conn); //krijohet instanca per me mujt me e kry login operation
+
+    if ($user->login($email, $password)) {
+        header("Location: Main.php");
+    } else {
+        echo "Invalid email or password.";
+    }
+
+    $dbConnection->closeConnection();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +36,7 @@
 
     <header>Login Form</header>
 
-    <form>
+    <form method="post" action="Login.php">
 
       <div class="field email">
         <div class="input-area">
@@ -31,7 +56,7 @@
 
     </form>
 
-    <div class="sign-txt">Not a member yet? <a href="Register.html">Sign up now</a></div>
+    <div class="sign-txt">Not a member yet? <a href="Register.php">Sign up now</a></div>
 
   </div>
 

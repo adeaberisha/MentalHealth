@@ -68,16 +68,3 @@ slides.style.transform = 'translateX(' + translateValue + ')';
 
 }
 
-/*RESPONSIVITETI I NAVBAR*/
-function toggleMenu() {
-const lista = document.querySelector('.lista ul');
-lista.classList.toggle('show');
-}
-
-// Per mbylljen e menuse kur nje element i menuse preket
-document.querySelectorAll('.lista ul li a').forEach(item => {
-item.addEventListener('click', () => {
-const lista = document.querySelector('.lista ul');
-lista.classList.remove('show');
-});
-});
