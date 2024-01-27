@@ -1,42 +1,3 @@
-<?php
-include("userRepository.php");
-include_once("DatabaseConnection.php");
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
-    $confirmPassword = htmlspecialchars($_POST['confirmPassword']);
-
-    if (empty($email) || empty($password) || empty($confirmPassword)) {
-        echo "All fields are required.";
-    } else {
-
-        if ($password !== $confirmPassword) {
-            echo "Passwords do not match.";
-        } else {
-
-            $dbConnection = new DatabaseConnection();
-            $conn = $dbConnection->startConnection();
-
-            $user = new userRepository($conn);
-
-            if ($user->isEmailTaken($email)) {
-                echo "Email already exists. Please choose a different one.";
-            } else {
-
-                if ($user->register($email, $password)) {
-                    header("Location: login.php");
-                } else {
-                    echo "Error during registration.";
-                }
-            }
-        }
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <header>SIGN UP</header>
-        <form>
+        <form action="register_process.php" method="post">
         <div class="field email-field">
             <div class="input-field">
-                <input type="email" placeholder="Enter your email" class="email" />
+                <input type="email" 
+                placeholder="Enter your email" 
+                class="email"
+                name="email" 
+                />
             </div>
             <span class="error email-error">
                 <i class="bx bx-error-circle error icon"></i>
@@ -65,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 type="password"
                 placeholder="Create password"
                 class="password"
+                name="password"
                 />
                 <i class="bx bx-hide show-hide"></i>
             </div>
@@ -81,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 type="password"
                 placeholder="Confirm password"
                 class="cPassword"
+                name="cPassword"
                 />
                 <i class="bx bx-hide show-hide"></i>
             </div>
@@ -97,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <script>
          const form = document.querySelector("form"),
-        emailField = form.querySelector(".email-field"),
+         emailField = form.querySelector(".email-field"),
          emailInput = emailField.querySelector(".email"),
          passField = form.querySelector(".create-password"),
          passInput = passField.querySelector(".password"),
@@ -156,18 +123,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          e.preventDefault();
          checkEmail();
          createPass();
-         confirmPass();
+        //  confirmPass();
 
          //E therrasim funksionin on keyup
 
          emailInput.addEventListener("keyup",checkEmail);
          passInput.addEventListener("keyup",createPass);
-         cPassInput.addEventListener("keyup",confirmPass);
+        cPassInput.addEventListener("keyup",confirmPass);
 
          if(
-             !emailField.classList.contains("invalid")&&
+            !emailField.classList.contains("invalid")&&
             !passField.classList.contains("invalid")&&
-           !cPassField.classList.contains("invalid")
+            // !cPassField.classList.contains("invalid")
         ) {
            location.href = form.getAttribute("action");
         }
