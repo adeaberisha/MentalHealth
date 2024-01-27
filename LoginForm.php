@@ -78,10 +78,9 @@
               pField.classList.add("valid");
         }
       }
-      //nese eField dhe pField nuk kane klasen error do te thote qe perdoruesi ka plotesuar formen me sukses
-      // if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-      //     window.location.href = form.getAttribute("action"); 
-      // }
+      nese eField dhe pField nuk kane klasen error do te thote qe perdoruesi ka plotesuar formen me sukses
+      if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+          form.submit();
     }
     </script>
 </body>
