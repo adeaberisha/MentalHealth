@@ -1,28 +1,3 @@
-<?php
-include("userRepository.php");
-include_once("DatabaseConnection.php");
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") { //per mi dergu te dhenat e formes ne server e shikojme a eshte perdor POST method
-    $username = htmlspecialchars($_POST['email']); //me e marr te dhenen e futur te username
-    $password = htmlspecialchars($_POST['password']); //me e marr te dhenen e futur te password
-
-    //_POST eshte variabel superglobale qe mban te dhena qe jane dergu ne server permes HTTP POST
-    //htmlspecialchars perdoret per konvertim te karaktereve speciale ne HTML entities, per me parandalu cross-site scripting attacks
-
-    $dbConnection = DatabaseConnection();
-    $conn = $dbConnection->startConnection(); //startConnection() e kthen database connection
-
-    $user = new userRepository($conn); //krijohet instanca per me mujt me e kry login operation
-
-    if ($user->login($email, $password)) {
-        header("Location: Main.php");
-    } else {
-        echo "Invalid email or password.";
-    }
-
-    $dbConnection->closeConnection();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,23 +11,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //per mi dergu te dhenat e formes ne
 
     <header>Login Form</header>
 
-    <form method="post" action="Login.php">
+    <form method="POST" action="login_process.php">
 
       <div class="field email">
         <div class="input-area">
-            <input type="text" placeholder="Email Address">
+            <input type="text" id="email"name="email" placeholder="Email Address">
         </div>
         <div class="error error-txt">Email can't be blank</div>
       </div>
 
       <div class="field password">
         <div class="input-area">
-          <input type="password" placeholder="Password">
+          <input type="password" id="password" name="password" placeholder="Password">
         </div>
         <div class="error error-txt">Password can't be blank</div>
       </div>
 
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" name="login">
 
     </form>
 
@@ -104,9 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //per mi dergu te dhenat e formes ne
         }
       }
       //nese eField dhe pField nuk kane klasen error do te thote qe perdoruesi ka plotesuar formen me sukses
-      if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-          window.location.href = form.getAttribute("action"); 
-      }
+      // if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+      //     window.location.href = form.getAttribute("action"); 
+      // }
     }
     </script>
 </body>

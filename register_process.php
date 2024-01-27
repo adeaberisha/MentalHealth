@@ -31,8 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insertStatement->bindParam(':role', $role);
 
         if ($insertStatement->execute()) {
+            header("Location: Main.php");
             echo "<script>alert('User has been registered successfully!'); </script>";
-            header("Location: LoginForm.php");
+            // header("Location: LoginForm.php");
             exit();
         } else {
             echo "<script>alert('Error!'); </script>";
