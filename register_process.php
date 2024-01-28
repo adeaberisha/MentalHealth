@@ -19,7 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkStatement->execute();
 
     if ($checkStatement->rowCount() > 0) {
-        echo "<script>alert('Email already exists!'); </script>";
+        echo "<script>alert('Email already exists!');</script>";
+        echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 2000);</script>";
+        exit();
+        
     } else {
         // If email doesn't exist, proceed with the insertion
         $role = isset($_POST['role']) ? $_POST['role'] : 'user'; // Default role is 'user'
@@ -31,16 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insertStatement->bindParam(':role', $role);
 
         if ($insertStatement->execute()) {
-            header("Location: Main.php");
-            echo "<script>alert('User has been registered successfully!'); </script>";
-            // header("Location: LoginForm.php");
-            exit();
+            echo "<script>alert('User has been registered successfully!');</script>";
+            
+            // Delay the redirection by 2 seconds
+            echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 2000);</script>";
         } else {
-            echo "<script>alert('Error!'); </script>";
+            echo "<script>alert('Error!');</script>";
+            echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 2000);</script>";
+            exit();
         }
     }
 }
 
 $conn = null;  // Close the connection
- 
 ?>
+

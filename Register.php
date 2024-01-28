@@ -64,7 +64,7 @@
 
     <script>
          const form = document.querySelector("form"),
-         emailField = form.querySelector(".email-field"),
+        emailField = form.querySelector(".email-field"),
          emailInput = emailField.querySelector(".email"),
          passField = form.querySelector(".create-password"),
          passInput = passField.querySelector(".password"),
@@ -99,7 +99,7 @@
 
      //Validimi i passwordit
      function createPass(){
-         const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+         const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
 
          if(!passInput.value.match(passPattern)){
             return passField.classList.add("invalid");
@@ -123,22 +123,23 @@
          e.preventDefault();
          checkEmail();
          createPass();
-        //  confirmPass();
+         confirmPass();
 
          //E therrasim funksionin on keyup
 
          emailInput.addEventListener("keyup",checkEmail);
          passInput.addEventListener("keyup",createPass);
-        cPassInput.addEventListener("keyup",confirmPass);
+         cPassInput.addEventListener("keyup",confirmPass);
 
-         if(
-            !emailField.classList.contains("invalid")&&
-            !passField.classList.contains("invalid")&&
-            // !cPassField.classList.contains("invalid")
+        if (
+         !emailField.classList.contains("invalid") &&
+         !passField.classList.contains("invalid") &&
+         !cPassField.classList.contains("invalid")
         ) {
-           location.href = form.getAttribute("action");
+         form.submit();
         }
-     });
+
+    });
 
     </script>
 </body>
