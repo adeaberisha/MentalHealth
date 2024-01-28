@@ -29,12 +29,7 @@ session_start();
                     style="width: 25px; height: 25px; margin-bottom: -5px;">
                     <a href="LoginForm.php"><span>Log in</span></a>
                     </li>
-                    <?php
-                    //Shfaqja e logout linkut nese useri eshte logged in
-                    if(isset($_SESSION['username'])){
-                        echo '<a href="Login.php?logout=true">Logout</a>';
-                    }
-                    ?>
+                    
                 </ul>
             </div>
  
