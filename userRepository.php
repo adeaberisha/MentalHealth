@@ -20,7 +20,7 @@ class userRepository{
     
         if ($checkStatement->rowCount() > 0) {
             echo "<script>alert('Email already exists!');</script>";
-            echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 2000);</script>";
+            echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
             exit();
         } else {
             // If email doesn't exist, proceed with the insertion
@@ -34,10 +34,10 @@ class userRepository{
                 echo "<script>alert('User has been registered successfully!');</script>";
                 
                 // Delay the redirection by 2 seconds
-                echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 2000);</script>";
+                echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 1000);</script>";
             } else {
                 echo "<script>alert('Error!');</script>";
-                echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 2000);</script>";
+                echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
                 exit();
             }
         }
