@@ -1,6 +1,8 @@
-*{
-    font-family: 'Times New Roman', Times, serif;
-}
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+} 
 
 .forms {
     display: flex;

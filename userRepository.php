@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 class userRepository{
     private $connection;
@@ -19,8 +20,8 @@ class userRepository{
         $checkStatement->execute();
     
         if ($checkStatement->rowCount() > 0) {
-            echo "<script>alert('Email already exists!');</script>";
-            echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
+            $_SESSION['error_message'] = "Email already exists!";
+            header("Location: Register.php");
             exit();
         } else {
             // If email doesn't exist, proceed with the insertion
@@ -31,13 +32,13 @@ class userRepository{
             $insertStatement->bindParam(':role', $role);
     
             if ($insertStatement->execute()) {
-                echo "<script>alert('User has been registered successfully!');</script>";
-                
-                // Delay the redirection by 2 seconds
-                echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 1000);</script>";
+
+                $_SESSION['error_message'] = "User has been registered successfully!";
+                header("Location: LoginForm.php");
+                exit();
             } else {
-                echo "<script>alert('Error!');</script>";
-                echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
+                $_SESSION['error_message'] = "Error while connecting to database!";
+                header("Location: Register.php");
                 exit();
             }
         }
@@ -73,13 +74,13 @@ class userRepository{
     function updateUser($id,$email){
          $conn = $this->connection;
 
-         $sql = "UPDATE users SET email=?, WHERE id=?";
+         $sql = "UPDATE users SET email=? WHERE id=?";
 
          $statement = $conn->prepare($sql);
 
          $statement->execute([$email,$id]);
 
-         echo "<script>alert('update was successful'); </script>";
+        echo "<script>alert('update was successful'); </script>";
     } 
 
     function deleteUser($id){

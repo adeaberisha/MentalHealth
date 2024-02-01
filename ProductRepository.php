@@ -83,19 +83,24 @@ class ProductRepository{
 
     public function addProduct($name, $price, $imagePath, $userId, $category){
         $sql = "INSERT INTO product (name, price, image_path, addedbyuser, category) VALUES (?, ?, ?, ?, ?)";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $name, PDO::PARAM_STR);
         $statement->bindParam(2, $price, PDO::PARAM_INT);
         $statement->bindParam(3, $imagePath, PDO::PARAM_STR);
         $statement->bindParam(4, $userId, PDO::PARAM_INT);
         $statement->bindParam(5, $category, PDO::PARAM_STR);
 
-        return $statement->execute();
+
+        if ($statement->execute()) {
+            return $this->connection->lastInsertId();
+        } else {
+            return false;
+        }
     }
 
     public function updateProduct($id, $name, $price, $imagePath, $category){
         $sql = "UPDATE product SET name = ?, price = ?, image_path = ?, category = ? WHERE id = ?";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $name, PDO::PARAM_STR);
         $statement->bindParam(2, $price, PDO::PARAM_INT);
         $statement->bindParam(3, $imagePath, PDO::PARAM_STR);
@@ -107,42 +112,43 @@ class ProductRepository{
 
     public function deleteProduct($productId){
         $sql = "DELETE FROM product WHERE id = ?";
-        $statement = $this->db->prepare($sql);
-        $statement->bindParam("i", $productId);
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(1, $productId, PDO::PARAM_INT);
     
         if ($statement->execute()) {
             header("Location: Dashboard.php");
             exit();
         } else {
-            echo "Error deleting product: " . $statement->error;
+            echo "Error deleting product: " . $statement->errorInfo()[2];
         }
     }
 
     public function getProductsByUserId($userId){
         $sql = "SELECT * FROM product WHERE addedbyuser = ?";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $userId, PDO::PARAM_INT);
         $statement->execute();
 
-        $result = $statement->get_result();
-    
-        if ($result->num_rows > 0) {
-            return $result->fetch_all(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!empty($result)) {
+            return $result;
         } else {
             return array();
         }
+    
     }
 
     public function getProductsByCategory($category){
         $sql = "SELECT * FROM product WHERE category = ?";
-        $statement = $this->db->prepare($sql);
+        $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $category, PDO::PARAM_STR);
         $statement->execute();
 
-        $result = $statement->get_result();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($result->num_rows > 0) {
-            return $result->fetch_all(PDO::FETCH_ASSOC);
+        if (!empty($result)) {
+            return $result;
         } else {
             return array();
         }
