@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+$errorMessage = isset($_SESSION['error_message']) ? $_SESSION['error_message'] : '';
+unset($_SESSION['error_message']); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +12,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
   <link rel="stylesheet" href="./Styles/LoginForm.css">
+  <style>
+    .error_message {
+      color: red;
+      text-align: center;
+      margin-top: 83px;
+      position: absolute;
+      width: 100%;
+
+    }
+    </style>
 </head>
 <body>
+
+  <div class="error_message"><?php echo $errorMessage; ?></div>
+
   <div class="wrapper">
 
     <header>Login Form</header>
 
-    <form method="POST" action="login_process.php">
+    <form method="POST" action="loginprocess.php">
 
       <div class="field email">
         <div class="input-area">
