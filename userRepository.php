@@ -65,6 +65,11 @@ class userRepository{
         return $user;
     }
 
+    public function logout(){
+        $_SESSION = array();
+        session_destroy();
+    }
+
     function updateUser($id,$email,$password){
          $conn = $this->connection;
 

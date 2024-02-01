@@ -1,5 +1,4 @@
 <?php
-include_once("DatabaseConnection.php");
 
 class ProductRepository{
     private $connection;
@@ -15,8 +14,12 @@ class ProductRepository{
         $name = $product->getName();
         $price = $product->getPrice();
         $imagePath = $product->getImagePath();
+        $category = $product->getCategory();
+        $addedByUser = $product->getAddedByUser();
+        $dateOfAddition = $product->getDateOfAddition();
 
-        $sql = "INSERT INTO Product (name,price,image_path) VALUES (?,?,?)"; //SQL Query per insertimin e te dhenave per tabelen product
+
+        $sql = "INSERT INTO Product (name, price, image_path, category, addedbyuser, dateofaddition) VALUES (?, ?, ?, ?, ?, ?)"; //SQL Query per insertimin e te dhenave per tabelen product
         $statement = $conn->prepare($sql); //$conn eshte database connection object, prepare() eshte metode qe thirret mbi database connection object
         //-per ta bere gati SQL statement per ekzekutim. $statement i bie te jete objekt qe prezanton prepared statement, 
         //-mund te perdoret per te ekzekutuar query dhe per te marre rezultate.
@@ -78,44 +81,71 @@ class ProductRepository{
 
     }
 
-    // function getThreeProducts(){
-    //     $conn = $this->connection;
+    public function addProduct($name, $price, $imagePath, $userId, $category){
+        $sql = "INSERT INTO product (name, price, image_path, addedbyuser, category) VALUES (?, ?, ?, ?, ?)";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(1, $name, PDO::PARAM_STR);
+        $statement->bindParam(2, $price, PDO::PARAM_INT);
+        $statement->bindParam(3, $imagePath, PDO::PARAM_STR);
+        $statement->bindParam(4, $userId, PDO::PARAM_INT);
+        $statement->bindParam(5, $category, PDO::PARAM_STR);
 
-    //     $productIds = [5,6,7]; //id e produkteve qe na nevojiten
-
-    //     $sql = "SELECT * FROM Product WHERE id IN (:id1,:id2,:id3)";
-
-    //     $statement = $conn->prepare($sql);
-
-    //     $statement->bindParam(':id1', $productIds[0], PDO::PARAM_INT); //metoda bindParam() lidh parametrin :id1 ne query me vleren e $productIds[0]
-    //     $statement->bindParam(':id2', $productIds[1], PDO::PARAM_INT); //PDO::PARAM_INT perdoret per te trajtuar vleren si integer dhe per me mbrojt prej injections
-    //     $statement->bindParam(':id3', $productIds[2], PDO::PARAM_INT);
-
-    //     $products = $statement->execute();
-
-    //     $products = $statement->fetchAll();
-
-    //     return $products;
-    // }
-
-    function updateProduct($id,$name,$price,$imagePath){
-        $conn = $this->connection;
-
-        $sql = "UPDATE Product SET name=?,price=?,image_path=? WHERE id=?";//SQL Query per te bere update nje produkt
-        $statement = $conn->prepare($sql);
-        $statement->execute([$name,$price,$imagePath]);
-
-        echo "<script>alert('Update was successful');</script>";
+        return $statement->execute();
     }
 
-    function deleteProduct($id){
-        $conn = $this->connection;
+    public function updateProduct($id, $name, $price, $imagePath, $category){
+        $sql = "UPDATE product SET name = ?, price = ?, image_path = ?, category = ? WHERE id = ?";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(1, $name, PDO::PARAM_STR);
+        $statement->bindParam(2, $price, PDO::PARAM_INT);
+        $statement->bindParam(3, $imagePath, PDO::PARAM_STR);
+        $statement->bindParam(4, $category, PDO::PARAM_STR);
+        $statement->bindParam(5, $id, PDO::PARAM_INT);
 
-        $sql = "DELETE from Product WHERE id=?";
-        $statement = $conn->prepare($sql);
-        $statement->execute([$id]); //pra execute() merr si parameter vleren qe do te lidhet ne placeholder
+        return $statement->execute();
+    }
 
-        echo "<script>alert('Delete was successful!');</script>";
+    public function deleteProduct($productId){
+        $sql = "DELETE FROM product WHERE id = ?";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam("i", $productId);
+    
+        if ($statement->execute()) {
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            echo "Error deleting product: " . $statement->error;
+        }
+    }
+
+    public function getProductsByUserId($userId){
+        $sql = "SELECT * FROM product WHERE addedbyuser = ?";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(1, $userId, PDO::PARAM_INT);
+        $statement->execute();
+
+        $result = $statement->get_result();
+    
+        if ($result->num_rows > 0) {
+            return $result->fetch_all(PDO::FETCH_ASSOC);
+        } else {
+            return array();
+        }
+    }
+
+    public function getProductsByCategory($category){
+        $sql = "SELECT * FROM product WHERE category = ?";
+        $statement = $this->db->prepare($sql);
+        $statement->bindParam(1, $category, PDO::PARAM_STR);
+        $statement->execute();
+
+        $result = $statement->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->fetch_all(PDO::FETCH_ASSOC);
+        } else {
+            return array();
+        }
     }
 }
 ?>

@@ -1,10 +1,19 @@
 <?php
 
 class DatabaseConnection{
+    private static $instance = null;
     private $server="localhost";
     private $username="root";
     private $password="";
     private $database="mentalhealth";
+
+
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 
     function startConnection(){
 

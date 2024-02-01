@@ -1,0 +1,58 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+}
+
+.form1,
+.form2 {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0 60px;
+    border: 1px solid rgb(200, 200, 200); 
+    border-radius: 10px; 
+}
+
+.titulli {
+    text-align: center;
+    color: #bed8dc;
+}
+
+.forma {
+    width: 100%;
+    margin-right: 120px;
+}
+
+.labelat {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.inputi,
+.kategoria {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.submit {
+    padding: 10px;
+    border: none;
+    background: linear-gradient(to right, rgb(67, 63, 63), rgb(110, 114, 111));
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px; 
+    cursor: pointer;
+    margin: 10px;
+    border: none; 
+    transition: background 0.3s ease; 
+}
