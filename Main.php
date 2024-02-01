@@ -1,5 +1,5 @@
 <?php 
-include("DatabaseConnection.php");
+include("Assets/DatabaseConnection.php");
 include("navbar.php");
 include_once("ProductRepository.php");
 include("TherapistRepository.php");
@@ -23,7 +23,7 @@ $therapists = $therapistRepository->getTherapistsByIds($therapistIds);
     <title>Mental Health</title>
     <link rel="stylesheet" href="./Styles/Main.css">
     
-    <script src="JavaScript.js" defer></script>
+    <script src="sliderjs.js" defer></script>
 <body>
     <div id="kontenti">
         <header>

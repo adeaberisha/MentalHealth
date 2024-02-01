@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'DatabaseConnection.php'; 
+require_once 'Assets/DatabaseConnection.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = sanitize_input($_POST["email"]);

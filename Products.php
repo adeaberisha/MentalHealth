@@ -1,5 +1,5 @@
 <?php 
-include("DatabaseConnection.php");
+include("Assets/DatabaseConnection.php");
 include("navbar.php");
 
 include_once("ProductRepository.php");

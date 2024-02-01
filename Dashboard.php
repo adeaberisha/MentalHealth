@@ -60,7 +60,7 @@ if ($_SESSION['user_role'] === 'admin') {
             <a href="?action=edit&user_id=<?= $currentUser['id'] ?>">Edit</a>
             <a href="?action=delete&user_id=<?= $currentUser['id'] ?>">Delete</a>
         </div>
-        <hr class="hr" />
+        <hr class="hr" 
         <?php
     endforeach;
 }

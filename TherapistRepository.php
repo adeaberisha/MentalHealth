@@ -1,5 +1,5 @@
 <?php
-include_once 'DatabaseConnection.php';
+include_once 'Assets/DatabaseConnection.php';
 
 class TherapistRepository {
     private $connection;
@@ -53,7 +53,7 @@ class TherapistRepository {
         // Create a parameterized query based on the number of product IDs
         $placeholders = implode(',', array_fill(0, count($therapistsIds), '?'));
     
-        $sql = "SELECT * FROM therapists WHERE id IN ($placeholders)";
+        $sql = "SELECT * FROM therapists WHERE therapist_id IN ($placeholders)";
         
         $stmt = $conn->prepare($sql);
     
@@ -89,7 +89,7 @@ class TherapistRepository {
     function updateTherapist($id, $name, $fee, $areasOfFocus, $specializedSkills, $imageUrl){
         $conn = $this->connection;
 
-        $sql = "UPDATE therapists SET name=?, fee=?, areas_of_focus=?, specialized_skills=?, image_url=? WHERE therapist_id=?";
+        $sql = "UPDATE therapists SET name=?, fee=?, areas_of_focus=?, specialized_skills=?, image_url=? WHERE id=?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$name, $fee, $areasOfFocus, $specializedSkills, $imageUrl, $id]);
 

@@ -111,7 +111,7 @@ class ProductRepository{
         $statement->bindParam("i", $productId);
     
         if ($statement->execute()) {
-            header("Location: dashboard.php");
+            header("Location: Dashboard.php");
             exit();
         } else {
             echo "Error deleting product: " . $statement->error;

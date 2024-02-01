@@ -70,14 +70,14 @@ class userRepository{
         session_destroy();
     }
 
-    function updateUser($id,$email,$password){
+    function updateUser($id,$email){
          $conn = $this->connection;
 
-         $sql = "UPDATE users SET email=?, password=? WHERE id=?";
+         $sql = "UPDATE users SET email=?, WHERE id=?";
 
          $statement = $conn->prepare($sql);
 
-         $statement->execute([$email,$password,$id]);
+         $statement->execute([$email,$id]);
 
          echo "<script>alert('update was successful'); </script>";
     } 

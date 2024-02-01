@@ -1,7 +1,7 @@
 <?php
 include_once("navbar.php");
 include_once("userRepository.php");
-include_once("DatabaseConnection.php");
+include_once("Assets/DatabaseConnection.php");
 include_once("ProductRepository.php");
 
 $dbConnection = DatabaseConnection::getInstance();
@@ -9,7 +9,7 @@ $conn = $dbConnection->startConnection();
 $user = new userRepository ($conn);
 $product = new ProductRepository ();
 
-if ($_SESSION['logged_in']){
+if ($_SESSION['user_authenticated']){
 
     $userId = $_SESSION['user_id'];
 

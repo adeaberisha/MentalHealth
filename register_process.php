@@ -1,6 +1,6 @@
 <?php
 include 'userRepository.php';
-include 'databaseConnection.php';
+include 'Assets/DatabaseConnection.php';
 
 $user = new userRepository();
 
