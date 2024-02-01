@@ -1,5 +1,4 @@
 <?php 
-session_start();
 
 class userRepository{
     private $connection;
@@ -20,8 +19,8 @@ class userRepository{
         $checkStatement->execute();
     
         if ($checkStatement->rowCount() > 0) {
-            $_SESSION['error_message'] = "Email already exists!";
-            header("Location: Register.php");
+            echo "<script>alert('Email already exists!');</script>";
+            echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
             exit();
         } else {
             // If email doesn't exist, proceed with the insertion
@@ -32,13 +31,13 @@ class userRepository{
             $insertStatement->bindParam(':role', $role);
     
             if ($insertStatement->execute()) {
-
-                $_SESSION['error_message'] = "User has been registered successfully!";
-                header("Location: LoginForm.php");
-                exit();
+                echo "<script>alert('User has been registered successfully!');</script>";
+                
+                // Delay the redirection by 2 seconds
+                echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 1000);</script>";
             } else {
-                $_SESSION['error_message'] = "Error while connecting to database!";
-                header("Location: Register.php");
+                echo "<script>alert('Error!');</script>";
+                echo "<script>setTimeout(function(){ window.location.href = 'Register.php'; }, 1000);</script>";
                 exit();
             }
         }
@@ -71,19 +70,20 @@ class userRepository{
         session_destroy();
     }
 
-    function updateUser($id,$email){
-         $conn = $this->connection;
+    function updateUser($id,$email,$role){
 
-         $sql = "UPDATE users SET email=? WHERE id=?";
+        $conn = $this->connection;
 
-         $statement = $conn->prepare($sql);
+        $sql = "UPDATE users SET email=?,role=? WHERE id=?";
 
-         $statement->execute([$email,$id]);
+        $statement = $conn->prepare($sql);
 
-        echo "<script>alert('update was successful'); </script>";
+        $statement->execute([$email,$role,$id]);
+
     } 
 
     function deleteUser($id){
+
         $conn = $this->connection;
 
         $sql = "DELETE FROM users WHERE id=?";
@@ -92,7 +92,6 @@ class userRepository{
 
         $statement->execute([$id]);
 
-        echo "<script>alert('delete was successful'); </script>";
    } 
 }
 
