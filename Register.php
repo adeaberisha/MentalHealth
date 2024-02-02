@@ -1,11 +1,3 @@
-<?php
-
-    session_start();
-
-    $errorMessage = isset($_SESSION['error_message']) ? $_SESSION['error_message'] : '';
-    unset($_SESSION['error_message']); 
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,22 +6,8 @@
     <title>Register</title>
     <link rel="stylesheet" href="./Styles/Register.css">
 
-    <style>
-    .error_message {
-      color: red;
-      text-align: center;
-      margin-top: 83px;
-      position: absolute;
-      width: 100%;
-
-    }
-    </style>
-
 </head>
 <body>
-
-    <div class="error_message"><?php echo $errorMessage; ?></div>
-
 
     <div class="container">
         <header>SIGN UP</header>

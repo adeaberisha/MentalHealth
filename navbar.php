@@ -29,6 +29,24 @@ session_start();
                     style="width: 25px; height: 25px; margin-bottom: -5px;">
                     <a href="LoginForm.php"><span>Log in</span></a>
                     </li>
+
+                    <?php
+                    
+                    echo '<nav>';
+                    echo '<ul>';
+                    
+                    // Check if the user is logged in
+                    if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
+                        echo '<li><a href="Dashboard.php">Dashboard</a></li>';
+                        echo '<li><a href="Logout.php">Logout</a></li>';
+                        echo '<li><a href="Edit.php"><i class="fa fa-user"></i>' . $_SESSION['user_email'] . '</a></li>';
+                    } else {
+                        echo '<li><a href="LoginForm.php">Log In</a></li>';
+                    }
+                    
+                    echo '</ul>';
+                    echo '</nav>';
+                    ?>
                     
                 </ul>
             </div>

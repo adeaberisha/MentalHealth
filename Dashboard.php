@@ -83,32 +83,32 @@ include ("ProductRepository.php");
         <?php if (!empty($user_products)): ?>
             <?php foreach ($user_products as $product): ?>
                 <div class="merch">
-                    <img src="<?= $product['image_path'];?>" alt="" class="img">
+                    <img src="<?= $product['image_path'];?>" alt="" class="img" >
                         <div class="info">
                             <ul>
                                 <li><b><?= $product['name'];?></b></li>
                                 <li><b><?= $product['price'];?></b></li>
                             </ul>
                         </div>
-                </div>
+                
 
-                <div class="buttons">
-                    <a href="?action=delete_product&product_id=<?= $product['id'] ?>" class="fshirja" style="color: red; margin-right: 10px">
-                        Delete
-                    </a>
-                    <a href="Edit.php?product_id=<?= $product['id'] ?>" class="editimi">
-                        Edit
-                    </a>
-                    <a href="Products.php?product_id=<?= $product['id'] ?>" class="shiko">
-                        View
-                    </a>
-                </div>
-                <p>Added on:
-                    <?= $product['dateofaddition'] ?>
-                </p>
-                <p>Added by:
-                    <?= $user->getUserById($product['addedbyuser'])['email'] ?>
-                </p>
+                    <div class="buttons">
+                        <a href="?action=delete_product&product_id=<?= $product['id'] ?>" class="fshirja" >
+                            Delete
+                        </a>
+                        <a href="Editi.php?product_id=<?= $product['id'] ?>" class="editimi">
+                            Edit
+                        </a>
+                        <a href="Products.php?product_id=<?= $product['id'] ?>" class="shiko">
+                            View
+                        </a>
+                    </div>
+                    <p>Added on:
+                        <?= $product['dateofaddition'] ?>
+                    </p>
+                    <p>Added by:
+                        <?= $user->getUserById($product['addedbyuser'])['email'] ?>
+                    </p>
                 </div>
             <?php endforeach; ?>
             <?php else: ?>
@@ -131,24 +131,22 @@ include ("ProductRepository.php");
                                 <li><b>Areas of Focus:</b><?= $therapist['areas_of_focus'];?></li>
                                 <li><b>Specialized Skills:</b><?= $therapist['specialized_skills'];?></li>
                             </ul>
-                            <button class="booknowbutton"><a href="LoginForm.php">Book now</a></button>
                         </div>
-                    </div>
 
-                    <div class="buttons">
-                        <a href="?action=delete_therapist&therapist_id=<?= $therapist['therapist_id'] ?>" class="fshirja" style="color: red; margin-right: 10px">
-                            Delete
-                        </a>
-                        <a href="Edit.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="editimi">
-                            Edit
-                        </a>
-                        <a href="Therapists.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="shiko">
-                            View
-                        </a>
-                    </div>
+                        <div class="buttons">
+                            <a href="?action=delete_therapist&therapist_id=<?= $therapist['therapist_id'] ?>" class="fshirja">
+                                Delete
+                            </a>
+                            <a href="Edit.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="editimi">
+                                Edit
+                            </a>
+                            <a href="Therapists.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="shiko">
+                                View
+                            </a>
+                        </div>
 
-                    <p>Added on: <?= $therapist['dateofaddition'] ?></p>
-                    <p>Added by: <?= $user->getUserById($therapist['addedbyuser'])['email'] ?></p>
+                        <p>Added on: <?= $therapist['dateofaddition'] ?></p>
+                        <p>Added by: <?= $user->getUserById($therapist['addedbyuser'])['email'] ?></p>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

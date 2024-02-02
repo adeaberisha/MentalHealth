@@ -33,7 +33,6 @@ class userRepository{
             if ($insertStatement->execute()) {
                 echo "<script>alert('User has been registered successfully!');</script>";
                 
-                // Delay the redirection by 2 seconds
                 echo "<script>setTimeout(function(){ window.location.href = 'LoginForm.php'; }, 1000);</script>";
             } else {
                 echo "<script>alert('Error!');</script>";
