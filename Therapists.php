@@ -45,7 +45,7 @@ $therapists = $therapistRepository->getAllTherapists();
                                 <li><b>Areas of Focus:</b><?= $therapist['areas_of_focus'];?></li>
                                 <li><b>Specialized Skills:</b><?= $therapist['specialized_skills'];?></li>
                             </ul>
-                            <button class="booknowbutton"><a href="LoginForm.html">Book now</a></button>
+                            <button class="booknowbutton"><a href="LoginForm.php">Book now</a></button>
                         </div>
                 </div>
             <?php endforeach; ?>

@@ -86,6 +86,23 @@ class TherapistRepository {
         }
     }
 
+    function addTherapists($name, $fee, $userId, $areas_of_focus, $specialized_skills, $image_url){
+        $sql = "INSERT INTO therapists (name, fee, addedbyuser, areas_of_focus, specialized_skills, image_url) VALUES (?, ?, ?, ?, ?, ?)";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(1, $name, PDO::PARAM_STR);
+        $statement->bindParam(2, $fee, PDO::PARAM_INT);
+        $statement->bindParam(3, $userId, PDO::PARAM_INT);
+        $statement->bindParam(4, $areas_of_focus, PDO::PARAM_STR);
+        $statement->bindParam(5, $specialized_skills, PDO::PARAM_STR);
+        $statement->bindParam(6, $image_url, PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return $this->connection->lastInsertId();
+        } else {
+            return false;
+        }
+    }
+
     function updateTherapist($id, $name, $fee, $areasOfFocus, $specializedSkills, $imageUrl){
         $conn = $this->connection;
 
@@ -97,12 +114,23 @@ class TherapistRepository {
     }
 
     function deleteTherapist($id){
-        $conn=$this->connection;
-        $sql = "DELETE FROM therapists WHERE therapist_id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$id]);
+        // $conn=$this->connection;
+        // $sql = "DELETE FROM therapists WHERE therapist_id=?";
+        // $stmt = $conn->prepare($sql);
+        // $stmt->execute([$id]);
 
-        echo "<script>alert('Delete was successful');</script>";
+        // echo "<script>alert('Delete was successful');</script>";
+
+        $sql = "DELETE FROM therapists WHERE therapist_id = ?";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(1, $id, PDO::PARAM_INT);
+    
+        if ($statement->execute()) {
+            header("Location: Dashboard.php");
+            exit();
+        } else {
+            echo "Error deleting product: " . $statement->errorInfo()[2];
+        }
     }
 }
 

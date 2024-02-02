@@ -21,6 +21,7 @@ include ("ProductRepository.php");
     
     $userId = $_SESSION['user_id'];
     $user_therapists = $therapists->getTherapistsByUserIds($userId);
+    $user_products = $products->getProductsByUserId($userId);
     
     if (isset($_GET['action']) && $_GET['action'] === 'delete_therapist' && isset($_GET['therapist_id'])) {
         $therapistId = $_GET['therapist_id'];
@@ -76,12 +77,13 @@ include ("ProductRepository.php");
     }
     ?>
 
+
 <h1 class="titulli">My products</h1>
     <div class="merchendise">
         <?php if (!empty($user_products)): ?>
             <?php foreach ($user_products as $product): ?>
                 <div class="merch">
-                    <img src="<?= $product['image_path'];?>" alt="" class="img" >
+                    <img src="<?= $product['image_path'];?>" alt="" class="img">
                         <div class="info">
                             <ul>
                                 <li><b><?= $product['name'];?></b></li>
@@ -114,5 +116,45 @@ include ("ProductRepository.php");
         <?php endif; ?>
     </div>
 
+    <!-- ================================================================================= -->
+    <?php if ($_SESSION['user_role'] === 'admin'):?>
+        <h1 class="titulli">My therapists</h1>
+        <div class="therapists">
+            <?php if (!empty($user_therapists)): ?>
+                <?php foreach ($user_therapists as $therapist): ?>
+                    <div class="therapist">
+                        <img src="<?= $therapist['image_url'];?>" alt="" class="img" >
+                        <div class="info">
+                            <ul class="informacione">
+                                <li><b><?= $therapist['name'] ;?></b></li>
+                                <li><b>Fee:</b> $ <?= $therapist['fee'];?> per session</li>
+                                <li><b>Areas of Focus:</b><?= $therapist['areas_of_focus'];?></li>
+                                <li><b>Specialized Skills:</b><?= $therapist['specialized_skills'];?></li>
+                            </ul>
+                            <button class="booknowbutton"><a href="LoginForm.php">Book now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="?action=delete_therapist&therapist_id=<?= $therapist['therapist_id'] ?>" class="fshirja" style="color: red; margin-right: 10px">
+                            Delete
+                        </a>
+                        <a href="Edit.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="editimi">
+                            Edit
+                        </a>
+                        <a href="Therapists.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="shiko">
+                            View
+                        </a>
+                    </div>
+
+                    <p>Added on: <?= $therapist['dateofaddition'] ?></p>
+                    <p>Added by: <?= $user->getUserById($therapist['addedbyuser'])['email'] ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No therapists added. <a href="Edit.php">Add one</a>.</p>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 </body>
 </html>
