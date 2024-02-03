@@ -37,6 +37,17 @@ if ($_SESSION['user_authenticated']){
     <link rel="stylesheet" href="./Styles/Edit.css">
 </head>
 <body>
+    <div class="format">
+        <div class="forma1">
+        <h1 class="editP">Edit Profile</h1>
+        <form method="post" class="forma" action="?action=update&id=<?= $userId ?>">
+            <label for="new_email" class="labels">New Email:</label>
+            <input type="email" class="inputi" name="new_email" value="<?= $userEdit["email"] ?>">
+            <label for="new_password" class="labels">New Password:</label>
+            <input type="password" class="inputi" name="new_password">
+            <input type="submit" class="submit" name="update_user" value="Update Profile">
+        </form>
+    </div>
     <br>
     <div class="forms">
         <div class="form1">
@@ -199,14 +210,21 @@ if ($_SESSION['user_authenticated']){
 
 
     if (isset($_POST['update_user'])) {
-        $newEmail = $_POST['new_email'];
-        $user->updateUser($userId, $newEmail);
-
-        header("Location: Main.php");
-        exit();
-
-    } else {
-        echo "<p>You are not logged in.</p>";
+        $newEmail = isset($_POST['new_email']) ? $_POST['new_email'] : '';
+    
+        if (!empty($newEmail)) {
+            $result = $user->updateUser($userId, $newEmail);
+    
+            if($result){
+                echo "<p>Email updated successfully.</p>";
+            }
+            else{
+                echo "<p>Failed to update email.</p>";
+            }
+        }
+        else{
+            echo "<p>You are not logged in.</p>";
+        }
     }
 
     include_once("footer.php"); 

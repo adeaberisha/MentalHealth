@@ -69,17 +69,32 @@ class userRepository{
         session_destroy();
     }
 
-    function updateUser($id,$email,$role){
-
+    public function updateUser($userId, $email, $password = null){
         $conn = $this->connection;
 
-        $sql = "UPDATE users SET email=?,role=? WHERE id=?";
-
+        
+        $sql = "UPDATE users SET email = :email WHERE id = :userId";
         $statement = $conn->prepare($sql);
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        $statement->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result = $statement->execute();
 
-        $statement->execute([$email,$role,$id]);
+        
+        if($password !== null){
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $sqlPassword = "UPDATE users SET password = :hashedPassword WHERE id = :userId";
+            $statementPassword = $conn->prepare($sqlPassword);
+            $statementPassword->bindParam(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
+            $statementPassword->bindParam(':userId', $userId, PDO::PARAM_INT);
+            $resultPassword = $statementPassword->execute();
+        }
+        else{
+            $resultPassword = true;
+        }
 
-    } 
+    return $result && (!$password || $resultPassword);
+
+    }
 
     function deleteUser($id){
 
