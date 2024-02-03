@@ -37,9 +37,10 @@ if ($_SESSION['user_authenticated']){
     <link rel="stylesheet" href="./Styles/Edit.css">
 </head>
 <body>
-    <div class="format">
-        <div class="forma1">
-        <h1 class="editP">Edit Profile</h1>
+    <br>
+    <div class="forms">
+        <div class="form1">
+        <h1 class="titulli">EDIT PROFILE</h1>
         <form method="post" class="forma" action="?action=update&id=<?= $userId ?>">
             <label for="new_email" class="labels">New Email:</label>
             <input type="email" class="inputi" name="new_email" value="<?= $userEdit["email"] ?>">
@@ -50,8 +51,8 @@ if ($_SESSION['user_authenticated']){
     </div>
     <br>
     <div class="forms">
-        <div class="form1">
-            <h1 class="titulli">ADD YOUR PRODUCT</h1>
+        <div class="form2">
+            <h1 class="titulli">ADD A PRODUCT</h1>
                 <form method="post" class="forma" action="?action=add_product&user_id=<?= $userId ?>" enctype="multipart/form-data">
                     <label class="labels" for="name">Product Name:</label>
                         <input class="inputi" type="text" name="name" required>
@@ -78,7 +79,7 @@ if ($_SESSION['user_authenticated']){
     if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'){
     ?>
     <div class="forms">
-        <div class="form1">
+        <div class="form3">
             <h1 class="titulli">ADD A THERAPIST</h1>
                 <form method="post" class="forma" action="?action=add_therapist&user_id=<?= $userId ?>" enctype="multipart/form-data">
                     <label class="labels" for="name">Therapist Name:</label>
@@ -226,8 +227,6 @@ if ($_SESSION['user_authenticated']){
             echo "<p>You are not logged in.</p>";
         }
     }
-
-    include_once("footer.php"); 
 ?>
 
 

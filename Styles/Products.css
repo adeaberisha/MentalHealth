@@ -20,10 +20,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically */
-    border: 1px solid rgb(80, 0, 121); /* Add a border */
-    border-radius: 10px; /* Add rounded corners to the border */
-    overflow: hidden; /* Ensure the border doesn't overlap the rounded corners of the image */
+    justify-content: center; 
+    border: 1px solid rgb(80, 0, 121); 
+    border-radius: 10px; 
+    overflow: hidden; 
     padding: 10px;
 
 }

@@ -50,14 +50,14 @@ class TherapistRepository {
     function getTherapistsByIds($therapistsIds){
         $conn = $this->connection;
     
-        // Create a parameterized query based on the number of product IDs
+        
         $placeholders = implode(',', array_fill(0, count($therapistsIds), '?'));
     
         $sql = "SELECT * FROM therapists WHERE therapist_id IN ($placeholders)";
         
         $stmt = $conn->prepare($sql);
     
-        // Bind parameters dynamically
+       
         foreach ($therapistsIds as $index => $therapistId) {
             $stmt->bindValue($index + 1, $therapistId, PDO::PARAM_INT);
         }
@@ -129,7 +129,7 @@ class TherapistRepository {
             header("Location: Dashboard.php");
             exit();
         } else {
-            echo "Error deleting product: " . $statement->errorInfo()[2];
+            echo "Error deleting therapist: " . $statement->errorInfo()[2];
         }
     }
 }

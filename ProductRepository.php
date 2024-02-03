@@ -138,20 +138,5 @@ class ProductRepository{
         }
     
     }
-
-    public function getProductsByCategory($category){
-        $sql = "SELECT * FROM product WHERE category = ?";
-        $statement = $this->connection->prepare($sql);
-        $statement->bindParam(1, $category, PDO::PARAM_STR);
-        $statement->execute();
-
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        if (!empty($result)) {
-            return $result;
-        } else {
-            return array();
-        }
-    }
 }
 ?>

@@ -12,6 +12,55 @@ include ("ProductRepository.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="Styles/Dashboard.css">
+    <style>
+        .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Translucent black background */
+    z-index: 1000; /* Higher z-index for overlay */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Higher z-index for modal */
+}
+
+#editProductModal {
+    display: none;
+    /* Your existing styles for the modal */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1002; /* Higher z-index for modal content */
+}
+
+#editProductForm label,
+#editProductForm input,
+#editProductForm select,
+#editProductForm textarea {
+    display: block;
+    margin-bottom: 10px; /* Adjust as needed for spacing between lines */
+    width: 400px;
+    height: 35px;
+}
+
+#editProductForm {
+    padding: 40px; /* Increase padding for the entire form */
+}
+
+
+
+    
+    </style>
 </head>
 <body>
     <?php
@@ -31,6 +80,20 @@ include ("ProductRepository.php");
     if (isset($_GET['action']) && $_GET['action'] === 'delete_product' && isset($_GET['product_id'])) {
         $productId = $_GET['product_id'];
         $products->deleteProduct($productId);
+    }
+
+    if (isset($_POST['update_product'])) {
+        $id = $_POST['pid'];
+        $name = $_POST['editProductName'];
+        $price = $_POST['editPrice'];
+        $category = $_POST['editCategory'];
+        $image_path = $_FILES['editImageFile']['name'];
+    
+    
+        $products->updateProduct($id, $name, $price, $category, $image_path);
+        header("Location: dashboard.php");
+        exit();
+    
     }
     
     if ($_SESSION['user_role'] === 'admin') {
@@ -71,7 +134,6 @@ include ("ProductRepository.php");
                 <a href="?action=edit&user_id=<?= $currentUser['id'] ?>">Edit</a>
                 <a href="?action=delete&user_id=<?= $currentUser['id'] ?>">Delete</a>
             </div>
-            <!-- <hr> -->
             <?php
         endforeach;
     }
@@ -96,9 +158,16 @@ include ("ProductRepository.php");
                         <a href="?action=delete_product&product_id=<?= $product['id'] ?>" class="fshirja" >
                             Delete
                         </a>
-                        <a href="Editi.php?product_id=<?= $product['id'] ?>" class="editimi">
-                            Edit
-                        </a>
+
+                        <button onclick="openModal(
+                            <?= $product['id'] ?>,
+                            '<?= $product['name'] ?>',
+                            <?= $product['price'] ?>,
+                            '<?= $product['category'] ?>',
+                            '<?= $product['image_path'] ?>'
+                            )" class="editimi">Edit
+                        </button>
+
                         <a href="Products.php?product_id=<?= $product['id'] ?>" class="shiko">
                             View
                         </a>
@@ -112,7 +181,7 @@ include ("ProductRepository.php");
                 </div>
             <?php endforeach; ?>
             <?php else: ?>
-            <p>No products added. <a href="Edit.php">Add one</a>.</p>
+            <p>No products added. <a href="LoginForm.php">Add one</a>.</p>
         <?php endif; ?>
     </div>
 
@@ -156,3 +225,50 @@ include ("ProductRepository.php");
     <?php endif; ?>
 </body>
 </html>
+<div class="overlay"></div>
+<div id="editProductModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()"><i class="fa fa-close" style="font-size:24px;color:white"></i></span>
+        <form id="editProductForm" action="?action=update_product&product_id=<?= $product['id'] ?>" method="post"
+            enctype="multipart/form-data">
+            <input type="hidden" name="pid" id="editProductId">
+            <label for="editProductName">Product Name:</label>
+            <input type="text" name="editProductName" id="editProductName">
+            <label for="editPrice">Price:</label>
+            <input type="text" name="editPrice" id="editPrice">
+            <label class="labels" for="category">Category:</label>
+            <select class="kategoria " id="editCategory" name="editCategory" required>
+                <option value="Original Hoodie">Original Hoodie</option>
+                <option value="Back Print Hoodie">Back Print Hoodie</option>
+                <option value="Front Print Hoodie">Front Print Hoodie</option>
+            </select>
+
+            <label class="labels" for="editImage">Image:</label>
+            <input class="labels" type="file" name="editImageFile" id="fileToUpload">
+
+            <input type="submit" name="update_product" value="Update Product">
+        </form>
+    </div>
+</div>
+<?php
+
+?>
+<script>
+        function openModal(id, name, price, category, image_path) {
+        document.getElementById('editProductId').value = id;
+        document.getElementById('editProductName').value = name;
+        document.getElementById('editPrice').value = price;
+        document.getElementById('editCategory').value = category;
+
+        document.getElementById('editProductModal').style.display = 'flex';
+        document.querySelector('.overlay').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('editProductModal').style.display = 'none';
+    
+    // Hide the overlay when the modal is closed
+    document.querySelector('.overlay').style.display = 'none';
+}
+
+</script> 
