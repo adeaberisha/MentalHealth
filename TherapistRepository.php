@@ -103,14 +103,17 @@ class TherapistRepository {
         }
     }
 
-    function updateTherapist($id, $name, $fee, $areasOfFocus, $specializedSkills, $imageUrl){
-        $conn = $this->connection;
+    function updateTherapist($therapist_id, $name, $fee, $areasOfFocus,$specializedSkills,$imageUrl){
+        $sql = "UPDATE therapists SET name = ?, fee = ?, image_url = ?, areas_of_focus = ?, specialized_skills = ? WHERE therapist_id = ?";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(1, $name, PDO::PARAM_STR);
+        $statement->bindParam(2, $fee, PDO::PARAM_INT);
+        $statement->bindParam(3, $imageUrl, PDO::PARAM_STR);
+        $statement->bindParam(4, $areasOfFocus, PDO::PARAM_STR);
+        $statement->bindParam(5, $specializedSkills, PDO::PARAM_STR);
+        $statement->bindParam(6, $therapist_id, PDO::PARAM_STR);
 
-        $sql = "UPDATE therapists SET name=?, fee=?, areas_of_focus=?, specialized_skills=?, image_url=? WHERE id=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$name, $fee, $areasOfFocus, $specializedSkills, $imageUrl, $id]);
-
-        echo "<script>alert('Update was successful');</script>";
+        return $statement->execute();
     }
 
     function deleteTherapist($id){

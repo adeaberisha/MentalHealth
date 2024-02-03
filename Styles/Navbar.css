@@ -8,28 +8,40 @@
 }
 nav{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 nav .lista{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+}
+nav .lista ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    background: white;
+    top: 80px;
+    width: 100%;
 }
 nav .lista ul li{
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
-    line-height: 80px;
-    margin-right: 20px;
-    color: black;
-    font-size: 15px;
+    margin-bottom: 10px;
 }
 nav .lista ul li a{
+    line-height: 52px;
     color: black;
+    font-size: 15px;
+    text-decoration: none;
 }
 nav .lista ul li a:hover{
     color: #66a5ad;
 }
-.lista ul li.logout a {
-    color: #ff0000;
+nav .lista ul.show {
+    display: flex;
 }
 nav .logo{
     align-items: center;
@@ -40,66 +52,53 @@ nav .logo{
     font-size: 27px;
     font-weight: bolder;
 } 
-
 .hamburger-menu{
     line-height: 80px;
     font-size: 27px;
     margin-right: 10px;
+    cursor: pointer;
+    display: block;
+    margin-left: 150px;
 }
 
+
 /*RESPONSIVITETI I NAVIGATION BAR*/
-@media screen and (max-width: 901px) {
-
-    .lista ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-    }
-
-    .lista ul.show {
-        display: flex;
-    }
-
-    .lista ul li {
-        margin: 10px;
-        text-align: center;
-    }
-
-} 
- 
-@media screen and (max-width: 407px) {
-
+@media screen and (max-width: 520px) {
     .hamburger-menu{
         font-size: 18px;
     }
-
  } 
 
 @media screen and (max-width: 1000px) {
-
     nav .logo{
     font-size: 18px;
     }
-
 } 
-
-@media screen and (min-width: 901px) {
-
-    .hamburger-menu {
+@media screen and (max-width: 510px){
+    nav .logo{
+        font-size: 12px;
+    }
+    nav .lista ul li a{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 415px){
+    nav .logo{
+        font-size: 9px;
+    }
+    nav .lista ul li a{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 360px){
+    nav .logo span{
         display: none;
     }
-
-}
-
-@media screen and (max-width: 360px){
-    nav .logo{
-        font-size: 11px;
+    nav .lista ul li a{
+        font-size: 10px;
     }
+
 }
 
 
-/*==========================*/
+

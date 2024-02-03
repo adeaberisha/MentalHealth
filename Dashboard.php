@@ -14,52 +14,70 @@ include ("ProductRepository.php");
     <link rel="stylesheet" href="Styles/Dashboard.css">
     <style>
         .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Translucent black background */
-    z-index: 1000; /* Higher z-index for overlay */
-}
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1000; 
+        }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1001; /* Higher z-index for modal */
-}
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001; 
+        }
 
-#editProductModal {
-    display: none;
-    /* Your existing styles for the modal */
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1002; /* Higher z-index for modal content */
-}
+        #editProductModal {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1002; 
+        }
 
-#editProductForm label,
-#editProductForm input,
-#editProductForm select,
-#editProductForm textarea {
-    display: block;
-    margin-bottom: 10px; /* Adjust as needed for spacing between lines */
-    width: 400px;
-    height: 35px;
-}
+        #editProductForm label,
+        #editProductForm input,
+        #editProductForm select,
+        #editProductForm textarea {
+            display: block;
+            margin-bottom: 10px;
+            width: 400px;
+            height: 35px;
+        }
 
-#editProductForm {
-    padding: 40px; /* Increase padding for the entire form */
-}
+        #editTherapistForm {
+            padding: 40px;
+        }
 
+        #editTherapistModal {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1002; 
+        }
 
+        #editTherapistForm label,
+        #editTherapistForm input,
+        #editTherapistForm select,
+        #editTherapistForm textarea {
+            display: block;
+            margin-bottom: 10px;
+            width: 400px;
+            height: 35px;
+        }
 
-    
+        #editTherapistForm {
+            padding: 40px;
+        }
     </style>
 </head>
 <body>
@@ -88,9 +106,26 @@ include ("ProductRepository.php");
         $price = $_POST['editPrice'];
         $category = $_POST['editCategory'];
         $image_path = $_FILES['editImageFile']['name'];
+        $imageUrl = 'Images/' . $image_path;
     
     
-        $products->updateProduct($id, $name, $price, $category, $image_path);
+        $products->updateProduct($id, $name, $price, $category, $imageUrl);
+        header("Location: dashboard.php");
+        exit();
+    
+    }
+
+    if (isset($_POST['update_therapist'])) {
+        $therapist_id = $_POST['therapist_id'];
+        $name = $_POST['therapistName'];
+        $fee = $_POST['fee'];
+        $areasOfFocus = $_POST['areasOfFocus'];
+        $specializedSkills = $_POST['specializedSkills'];
+        $image_path = $_FILES['imageFile']['name'];
+        $imageUrl = 'Images/' . $image_path;
+    
+    
+        $therapists->updateTherapist($therapist_id, $name, $fee, $areasOfFocus,$specializedSkills,$imageUrl);
         header("Location: dashboard.php");
         exit();
     
@@ -181,11 +216,10 @@ include ("ProductRepository.php");
                 </div>
             <?php endforeach; ?>
             <?php else: ?>
-            <p>No products added. <a href="LoginForm.php">Add one</a>.</p>
+            <p>No products added. <a href="Edit.php">Add one</a>.</p>
         <?php endif; ?>
     </div>
 
-    <!-- ================================================================================= -->
     <?php if ($_SESSION['user_role'] === 'admin'):?>
         <h1 class="titulli">My therapists</h1>
         <div class="therapists">
@@ -206,9 +240,14 @@ include ("ProductRepository.php");
                             <a href="?action=delete_therapist&therapist_id=<?= $therapist['therapist_id'] ?>" class="fshirja">
                                 Delete
                             </a>
-                            <a href="Edit.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="editimi">
-                                Edit
-                            </a>
+                            <button onclick="openTherapistModal(
+                            <?= $therapist['therapist_id'] ?>,
+                            '<?= $therapist['name'] ?>',
+                            <?= $therapist['fee'] ?>,
+                            '<?= $therapist['areas_of_focus'] ?>',
+                            '<?= $therapist['specialized_skills'] ?>',
+                            '<?= $therapist['image_url'] ?>'
+                            )" class="editimi">Edit</button>
                             <a href="Therapists.php?therapist_id=<?= $therapist['therapist_id'] ?>" class="shiko">
                                 View
                             </a>
@@ -250,25 +289,96 @@ include ("ProductRepository.php");
         </form>
     </div>
 </div>
+
+<div class="overlay"></div>
+<div id="editTherapistModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeTherapistModal()"><i class="fa fa-close" style="font-size:24px;color:white"></i></span>
+        <form id="editTherapistForm" action="?action=update_therapist&therapist_id=<?= $therapist['therapist_id'] ?>" method="post"
+            enctype="multipart/form-data">
+            <input type="hidden" name="therapist_id" id="editTherapistId">
+            <label for="editTherapistName">Therapist Name:</label>
+            <input type="text" name="therapistName" id="editTherapistName">
+            <label for="editFee">Fee:</label>
+            <input type="text" name="fee" id="editFee">
+            <label class="labels" for="areasOfFocus">Areas of Focus:</label>
+            <select class="areasOfFocus" id="editAreasOfFocus" name="areasOfFocus" required>
+                <option value="Relationship counseling">Relationship counseling</option>
+                <option value="Anxiety Management">Anxiety Management</option>
+                <option value="Trauma Recovery">Trauma Recovery</option>
+                <option value="Family Dynamics">Family Dynamics</option>
+                <option value="Addiction Recovery">Addiction Recovery</option>
+                <option value="Neurodevelopmental Disorders">Neurodevelopmental Disorders</option>
+                <option value="Cultural Identity and Issues">Cultural Identity and Issues</option>
+                <option value="Adolescent Counseling">Adolescent Counseling</option>
+                <option value="ADHD">ADHD</option>
+                <option value="Anger Management">Anger Management</option>
+                <option value="Eating Disorders">Eating Disorders</option>
+                <option value="Insomnia,sleep disorder">Insomnia,sleep disorder</option>
+                <option value="Self-esteem">Self-esteem</option>
+                <option value="Grief and Loss">Grief and Loss</option>
+                <option value="Career Counseling">Career Counseling</option>
+            </select>
+            <label class="labels" for="specializedSkills">Specialized Skills:</label>
+            <select class="specializedSkills" id="editSpecializedSkills" name="specializedSkills" required>
+                <option value="Couples Therapy">Couples Therapy</option>
+                <option value="Mindfulness Techniques">Mindfulness Techniques</option>
+                <option value="Trauma-Informed">Trauma-Informed</option>
+                <option value="Conflict Resolution">Conflict Resolution</option>
+                <option value="Abuse Counseling">Abuse Counseling</option>
+                <option value="Social Skills Training">Affirmative Therapy</option>
+                <option value="Diversity Awareness">Diversity Awareness</option>
+                <option value="Parent-child therapy">Parent-child therapy</option>
+                <option value="ADHD Coaching">ADHD Coaching</option>
+                <option value="Anger related disorders">Anger related disorders</option>
+                <option value="Nutritional Counseling">Nutritional Counseling</option>
+                <option value="Cognitive Behavioral">Cognitive Behavioral</option>
+                <option value="Acceptance and Comitment Therapy">Acceptance and Comitment Therapy</option>
+                <option value="Bereavement Counseling and Patience Therapy">Bereavement Counseling and Patience Therapy</option>
+                <option value="Goal Setting and Self-Confidence">Goal Setting and Self-Confidence</option>
+            </select>
+            <label class="labels" for="editImage">Image:</label>
+            <input class="labels" type="file" name="imageFile" id="fileToUpload">
+
+            <input type="submit" name="update_therapist" value="Update Therapist">
+        </form>
+    </div>
+</div>
 <?php
 
 ?>
 <script>
-        function openModal(id, name, price, category, image_path) {
-        document.getElementById('editProductId').value = id;
-        document.getElementById('editProductName').value = name;
-        document.getElementById('editPrice').value = price;
-        document.getElementById('editCategory').value = category;
+        function openModal(id, name, price, category, imageUrl) {
+            document.getElementById('editProductId').value = id;
+            document.getElementById('editProductName').value = name;
+            document.getElementById('editPrice').value = price;
+            document.getElementById('editCategory').value = category;
 
-        document.getElementById('editProductModal').style.display = 'flex';
-        document.querySelector('.overlay').style.display = 'block';
-    }
+            document.getElementById('editProductModal').style.display = 'flex';
+            document.querySelector('.overlay').style.display = 'block';
+        }
 
-    function closeModal() {
-        document.getElementById('editProductModal').style.display = 'none';
+        function openTherapistModal(id, name, fee, areasOfFocus, specializedSkills, imageUrl) {
+
+            document.getElementById('editTherapistId').value = id;
+            document.getElementById('editTherapistName').value = name;
+            document.getElementById('editFee').value = fee;
+            document.getElementById('editAreasOfFocus').value = areasOfFocus;
+            document.getElementById('editSpecializedSkills').value = specializedSkills;
+
+
+            document.getElementById('editTherapistModal').style.display = 'flex';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('editProductModal').style.display = 'none';
+
+        function closeTherapistModal() {
+            document.getElementById('editTherapistModal').style.display = 'none';
+        }
     
-    // Hide the overlay when the modal is closed
-    document.querySelector('.overlay').style.display = 'none';
-}
+        document.querySelector('.overlay').style.display = 'none';
+        }
 
 </script> 

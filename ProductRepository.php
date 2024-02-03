@@ -98,12 +98,12 @@ class ProductRepository{
         }
     }
 
-    public function updateProduct($id, $name, $price, $imagePath, $category){
+    public function updateProduct($id, $name, $price, $imageUrl, $category){
         $sql = "UPDATE product SET name = ?, price = ?, image_path = ?, category = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $name, PDO::PARAM_STR);
         $statement->bindParam(2, $price, PDO::PARAM_INT);
-        $statement->bindParam(3, $imagePath, PDO::PARAM_STR);
+        $statement->bindParam(3, $imageUrl, PDO::PARAM_STR);
         $statement->bindParam(4, $category, PDO::PARAM_STR);
         $statement->bindParam(5, $id, PDO::PARAM_INT);
 
